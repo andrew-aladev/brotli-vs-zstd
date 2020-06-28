@@ -3,7 +3,6 @@ source "https://rubygems.org"
 gem "colorize"
 gem "descriptive_statistics"
 gem "filesize"
-gem "parallel"
 gem "ruby-brs"
 gem "ruby-zstds"
 

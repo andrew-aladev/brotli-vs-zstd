@@ -1,5 +1,4 @@
 require "filesize"
-require "parallel"
 require "shellwords"
 
 require_relative "format"
@@ -33,26 +32,21 @@ def get_script_pathes(mode)
 end
 
 def get_script_stats(pathes, compress_block, decompress_block)
-  lock  = Mutex.new
-  index = 0
-
-  Parallel.map(pathes, :in_threads => Parallel.processor_count) do |path|
-    content = File.read path
+  pathes.map.with_index do |path, index|
+    percent = format_percent index, pathes.length
     size    = File.size path
+    warn "- #{percent}% processing script, path: #{path}, size: #{Filesize.new(size).pretty}"
+
+    content = File.read path
 
     compressed_content,    compressed_time   = with_time { compress_block.call content }
     _decompressed_content, decompressed_time = with_time { decompress_block.call compressed_content }
 
     ratio = content.length.to_f / compressed_content.length
 
-    lock.synchronize do
-      percent = format_percent index, pathes.length
-      warn "- #{percent}% processing script, path: #{path}, size: #{Filesize.new(size).pretty}"
-      warn "ratio: #{colorize_float(ratio)}, " \
-        "compressed time: #{float_to_string(compressed_time)}, " \
-        "decompressed time: #{float_to_string(decompressed_time)}"
-      index += 1
-    end
+    warn "ratio: #{colorize_float(ratio)}, " \
+      "compressed time: #{float_to_string(compressed_time)}, " \
+      "decompressed time: #{float_to_string(decompressed_time)}"
 
     {
       :ratio             => ratio,
