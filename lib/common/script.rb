@@ -87,7 +87,7 @@ def get_all_scripts_stat(pathes, create_compressor_block, create_decompressor_bl
   compressed_time   = 0
   decompressed_time = 0
 
-  open_pipe_with_processor create_compressor_block, :writer do |compressor, compressor_read_io|
+  open_pipe_with_processor create_compressor_block, :writer do |compressor, compressor_read_io, compressor_write_io|
     open_pipe_with_processor create_decompressor_block, :reader do |decompressor, decompressor_read_io, decompressor_write_io|
       # Compressor io -> decompressor io.
 
