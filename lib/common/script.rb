@@ -1,6 +1,6 @@
-require "filesize"
 require "shellwords"
 
+require_relative "colorize"
 require_relative "format"
 require_relative "time"
 
@@ -26,16 +26,19 @@ def get_script_pathes(mode)
     end
 
   pathes = IO.popen(command.join(" ")) { |io| io.readlines :chomp => true }
-  warn "found #{colorize_length(pathes.length)} script pathes"
+
+  pathes_text = colorize_length pathes.length
+  warn "found #{pathes_text} script pathes"
 
   pathes
 end
 
 def get_script_stats(pathes, compress_block, decompress_block)
   pathes.map.with_index do |path, index|
-    percent = format_percent index, pathes.length
-    size    = File.size path
-    warn "- #{percent}% processing script, path: #{path}, size: #{Filesize.new(size).pretty}"
+    percent   = format_percent index, pathes.length
+    size_text = format_filesize File.size(path)
+
+    warn "- #{percent}% processing script, path: #{path}, size: #{size_text}"
 
     content = File.read path
 
@@ -44,9 +47,13 @@ def get_script_stats(pathes, compress_block, decompress_block)
 
     ratio = content.length.to_f / compressed_content.length
 
-    warn "ratio: #{colorize_float(ratio)}, " \
-      "compressed time: #{float_to_string(compressed_time)}, " \
-      "decompressed time: #{float_to_string(decompressed_time)}"
+    ratio_text             = format_float(ratio).light_green
+    compressed_time_text   = format_float compressed_time
+    decompressed_time_text = format_float decompressed_time
+
+    warn "ratio: #{ratio_text}, " \
+      "compressed time: #{compressed_time_text}, " \
+      "decompressed time: #{decompressed_time_text}"
 
     {
       :ratio             => ratio,
@@ -59,12 +66,7 @@ end
 def open_pipe_with_processor(create_processor_block, mode, &_block)
   read_io, write_io = IO.pipe
 
-  main_io =
-    if mode == :writer
-      write_io
-    else
-      read_io
-    end
+  main_io = mode == :writer ? write_io : read_io
 
   begin
     processor = create_processor_block.call main_io
@@ -126,9 +128,10 @@ def get_all_scripts_stat(pathes, create_compressor_block, create_decompressor_bl
       end
 
       pathes.each.with_index do |path, index|
-        percent = format_percent index, pathes.length
-        size    = File.size path
-        warn "- #{percent}% processing script, path: #{path}, size: #{Filesize.new(size).pretty}"
+        percent   = format_percent index, pathes.length
+        size_text = format_filesize File.size(path)
+
+        warn "- #{percent}% processing script, path: #{path}, size: #{size_text}"
 
         content = File.read path
         content_length += content.length
@@ -161,11 +164,17 @@ def get_all_scripts_stat(pathes, create_compressor_block, create_decompressor_bl
 
   ratio = content_length.to_f / compressed_content_length
 
-  warn "total content_length: #{Filesize.new(content_length).pretty}, " \
-    "compressed content length: #{Filesize.new(compressed_content_length).pretty}, " \
-    "ratio: #{colorize_float(ratio)}, " \
-    "compressed time: #{float_to_string(compressed_time)}, " \
-    "decompressed time: #{float_to_string(decompressed_time)}"
+  total_content_text      = format_filesize content_length
+  compressed_content_text = format_filesize compressed_content_length
+  ratio_text              = format_float(ratio).light_green
+  compressed_time_text    = format_float compressed_time
+  decompressed_time_text  = format_float decompressed_time
+
+  warn "total content_length: #{total_content_text}, " \
+    "compressed content length: #{compressed_content_text}, " \
+    "ratio: #{ratio_text}, " \
+    "compressed time: #{compressed_time_text}, " \
+    "decompressed time: #{decompressed_time_text}"
 
   {
     :ratio             => ratio,
