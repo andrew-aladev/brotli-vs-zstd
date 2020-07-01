@@ -19,12 +19,13 @@ end
 def find_file_pathes(root_path, mode, &_block)
   raise StandardError, "root path is required" if root_path.blank?
 
-  warn "reading files from path: #{root_path}"
-
   command = ["find", Shellwords.shellescape(root_path), "-type", "f"]
   command << yield(mode)
+  command = command.join " "
 
-  pathes = IO.popen(command.join(" ")) { |io| io.readlines :chomp => true }
+  warn "reading files from root path: #{root_path}, command: #{command}"
+
+  pathes = IO.popen(command) { |io| io.readlines :chomp => true }
 
   pathes_text = colorize_length pathes.length
   warn "found #{pathes_text} file pathes"
@@ -42,17 +43,19 @@ def group_file_pathes_by_size_histogram(file_pathes, start_size = DEFAULT_HISTOG
     }
   end
 
-  warn "grouping file pathes by histogram"
+  start_size_text = format_filesize start_size
+  warn "grouping file pathes by histogram, start size: #{start_size_text}, size multiplier: #{size_multiplier}"
 
   groups    = []
-  prev_size = 0
+  from_size = 0
   size      = start_size
+  to_size   = size - 1
 
   until objects.empty?
     pathes = []
 
     objects = objects.filter do |object|
-      next true if object[:size] >= size
+      next true if object[:size] > to_size
 
       pathes << object[:path]
 
@@ -60,13 +63,14 @@ def group_file_pathes_by_size_histogram(file_pathes, start_size = DEFAULT_HISTOG
     end
 
     groups << {
-      :prev_size => prev_size,
-      :size      => size,
+      :from_size => from_size,
+      :to_size   => to_size,
       :pathes    => pathes
     }
 
-    prev_size  = size
+    from_size  = size
     size      *= size_multiplier
+    to_size    = size - 1
   end
 
   groups_text = colorize_length groups.length

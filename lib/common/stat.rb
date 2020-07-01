@@ -2,70 +2,115 @@ require_relative "colorize"
 require_relative "format"
 require_relative "time"
 
-def get_file_path_stats(file_pathes, compress_block, decompress_block)
-  total_content_size            = 0
-  total_compressed_content_size = 0
-  total_compressed_time         = 0
-  total_decompressed_time       = 0
+def get_stat(content_size, compressed_content_size, compress_time, decompress_time)
+  {
+    :content_size           => content_size,
+    :ratio                  => content_size.to_f / compressed_content_size,
+    :compress_performance   => content_size.to_f / compress_time,
+    :decompress_performance => compressed_content_size.to_f / decompress_time
+  }
+end
 
+def process_files(file_pathes, &_block)
   file_pathes.map.with_index do |path, index|
+    content = File.read path
+
     percent   = format_percent index, file_pathes.length
-    content   = File.read path
     size_text = format_filesize content.bytesize
 
     warn "- #{percent}% processing script, path: #{path}, size: #{size_text}"
 
-    compressed_content,   compressed_time   = with_time { compress_block.call content }
-    decompressed_content, decompressed_time = with_time { decompress_block.call compressed_content }
-
-    raise "decompressed content does not equal to original content" unless decompressed_content == content
-
-    total_content_size            += content.bytesize
-    total_compressed_content_size += compressed_content.bytesize
-    total_compressed_time         += compressed_time
-    total_decompressed_time       += decompressed_time
+    yield content
   end
 end
 
-# def get_script_stats(pathes, compress_block, decompress_block)
-#     ratio = content.length.to_f / compressed_content.length
-#
-#     ratio_text             = format_float(ratio).light_green
-#     compressed_time_text   = format_float compressed_time
-#     decompressed_time_text = format_float decompressed_time
-#
-#     warn "ratio: #{ratio_text}, " \
-#       "compressed time: #{compressed_time_text}, " \
-#       "decompressed time: #{decompressed_time_text}"
-#
-#     {
-#       :ratio             => ratio,
-#       :compressed_time   => compressed_time,
-#       :decompressed_time => decompressed_time
-#     }
-# end
+def collect_file_stats(file_pathes, compress_block, decompress_block)
+  warn "collecting file stats"
+
+  total_content_size            = 0
+  total_compressed_content_size = 0
+  total_compress_time           = 0
+  total_decompress_time         = 0
+
+  stats = process_files file_pathes do |content|
+    compressed_content,   compress_time   = with_time { compress_block.call content }
+    decompressed_content, decompress_time = with_time { decompress_block.call compressed_content }
+
+    raise StandardError, "decompressed content does not equal to original content" unless decompressed_content == content
+
+    content_size            = content.bytesize
+    compressed_content_size = compressed_content.bytesize
+
+    total_content_size            += content_size
+    total_compressed_content_size += compressed_content_size
+    total_compress_time           += compress_time
+    total_decompress_time         += decompress_time
+
+    get_stat(
+      content_size,
+      compressed_content_size,
+      compress_time,
+      decompress_time
+    )
+  end
+
+  total = get_stat(
+    total_content_size,
+    total_compressed_content_size,
+    total_compress_time,
+    total_decompress_time
+  )
+
+  {
+    :files => stats,
+    :total => total
+  }
+end
+
+def open_processor(create_processor_block, io, &_block)
+  processor = create_processor_block.call io
+
+  begin
+    yield processor
+  ensure
+    processor.close
+  end
+end
+
+def collect_files_group_stat(file_pathes, create_compressor_block, create_decompressor_block)
+  warn "collecting files group stat"
+
+  content_size            = 0
+  compressed_content_size = 0
+  compress_time           = 0
+  decompress_time         = 0
+
+  IO.pipe do |read_io, write_io|
+    open_processor create_compressor_block, write_io do |compressor|
+      open_processor create_decompressor_block, read_io do |decompressor|
+        process_files file_pathes do |content|
+          content_size += content.bytesize
+        end
+
+        begin
+          compressor.flush_nonblock
+        rescue ::IO::WaitWritable
+          ;
+        end
+      end
+    end
+  end
+
+  get_stat(
+    content_size,
+    compressed_content_size,
+    compress_time,
+    decompress_time
+  )
+end
 
 # MAX_COMPRESSOR_PORTION_LENGTH   = 1 << 21 # 2 MB
 # MAX_DECOMPRESSOR_PORTION_LENGTH = 1 << 23 # 8 MB
-
-# def open_pipe_with_processor(create_processor_block, mode, &_block)
-#   read_io, write_io = IO.pipe
-#
-#   main_io = mode == :writer ? write_io : read_io
-#
-#   begin
-#     processor = create_processor_block.call main_io
-#
-#     begin
-#       yield processor, read_io, write_io
-#     ensure
-#       processor.close
-#     end
-#   ensure
-#     write_io.close
-#     read_io.close
-#   end
-# end
 
 # def get_all_scripts_stat(pathes, create_compressor_block, create_decompressor_block)
 #   content_length            = 0
@@ -146,24 +191,4 @@ end
 #       decompressor_thread.join
 #     end
 #   end
-#
-#   ratio = content_length.to_f / compressed_content_length
-#
-#   total_content_text      = format_filesize content_length
-#   compressed_content_text = format_filesize compressed_content_length
-#   ratio_text              = format_float(ratio).light_green
-#   compressed_time_text    = format_float compressed_time
-#   decompressed_time_text  = format_float decompressed_time
-#
-#   warn "total content_length: #{total_content_text}, " \
-#     "compressed content length: #{compressed_content_text}, " \
-#     "ratio: #{ratio_text}, " \
-#     "compressed time: #{compressed_time_text}, " \
-#     "decompressed time: #{decompressed_time_text}"
-#
-#   {
-#     :ratio             => ratio,
-#     :compressed_time   => compressed_time,
-#     :decompressed_time => decompressed_time
-#   }
 # end
