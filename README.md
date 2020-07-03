@@ -1,4 +1,4 @@
-# Comparison of brotli and zstd compression ratio using cdnjs repository
+# Comparison of brotli and zstd
 
 All tests was executed in single thread mode on base CPU clock (any performance boosts disabled).
 
