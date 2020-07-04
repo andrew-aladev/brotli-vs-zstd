@@ -15,5 +15,8 @@ fi
 "./lib/process.rb" \
   "cdnjs" \
   "$cdnjs_path" \
-  "js:min,not_min,any" \
-  "css:min,not_min,any"
+  "otf:any" \
+  "ttf:any" \
+  "svg:min,not_min,any" \
+  "css:min,not_min,any" \
+  "js:min,not_min,any"

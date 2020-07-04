@@ -2,22 +2,33 @@ require "shellwords"
 
 require_relative "../common/colorize"
 
-def find_file_command(type, postfix)
+def find_file_command(postfix, type)
   case type
   when :min
-    ["-name", "*min.#{postfix}"]
+    [
+      "-name", "'*.min.#{postfix}'",
+      "-o", "-name", "'*-min.#{postfix}'",
+      "-o", "-name", "'*.mini.#{postfix}'",
+      "-o", "-name", "'*-mini.#{postfix}'"
+    ]
   when :not_min
-    ["-name", "*.#{postfix}", "-not", "-name", "*min.#{postfix}"]
+    [
+      "-name", "'*.#{postfix}'",
+      "-not", "-name", "'*.min.#{postfix}'",
+      "-not", "-name", "'*-min.#{postfix}'",
+      "-not", "-name", "'*.mini.#{postfix}'",
+      "-not", "-name", "'*-mini.#{postfix}'"
+    ]
   else
-    ["-name", "*.#{postfix}"]
+    ["-name", "'*.#{postfix}'"]
   end
 end
 
-def find_file_pathes(root_path, &_block)
-  raise StandardError, "root path is required" if root_path.blank?
+def find_file_pathes(root_path, postfix, type)
+  raise StandardError, "root path is required" if root_path.nil? || root_path.empty?
 
   command = ["find", Shellwords.shellescape(root_path), "-type", "f"]
-  command << yield
+  command << find_file_command(postfix, type)
   command = command.join " "
 
   warn "reading files from root path: #{root_path}, command: #{command}"

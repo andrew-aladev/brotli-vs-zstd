@@ -1,27 +1,27 @@
 #!/usr/bin/env ruby
 
-require "ocg"
+require_relative "file/find"
 
-name         = ARGV[0]
-root_path    = ARGV[1]
-descriptions = ARGV[2..]
+name      = ARGV[0]
+root_path = ARGV[1]
+params    = ARGV[2..]
 
 raise StandardError, "name argument is required" if name.nil? || name.empty?
 raise StandardError, "root path is required" if root_path.nil? || root_path.empty?
-raise StandardError, "descriptions are required" if descriptions.empty?
+raise StandardError, "params are required" if params.empty?
 
-datas = descriptions.flat_map do |description|
-  data = description.split ":"
-  raise StandardError, "description: postfix : types" if data.length != 2
+option_groups = params.flat_map do |param|
+  data = param.split ":"
+  raise StandardError, "param: postfix : types" if data.length != 2
 
   postfix = data[0]
-  raise StandardError, "description postfix is required" if postfix.nil? || postfix.empty?
+  raise StandardError, "postfix is required" if postfix.nil? || postfix.empty?
 
   types_value = data[1]
-  raise StandardError, "description types value is required" if types_value.nil? || types_value.empty?
+  raise StandardError, "types value is required" if types_value.nil? || types_value.empty?
 
   types = types_value.split ","
-  raise StandardError, "description types are required" if types.empty?
+  raise StandardError, "types are required" if types.empty?
 
   types.map do |type|
     {
@@ -31,10 +31,7 @@ datas = descriptions.flat_map do |description|
   end
 end
 
-pp datas
-
-# postfixes = postfixes.split(",").freeze
-# types     = types.split(",").map(&:to_sym).freeze
-
-# pp postfixes
-# pp types
+option_groups.each do |options|
+  file_pathes = find_file_pathes root_path, options[:postfix], options[:type]
+  pp file_pathes
+end
