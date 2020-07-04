@@ -2,11 +2,11 @@ require "shellwords"
 
 require_relative "../common/colorize"
 
-def find_file_command(mode, postfix)
-  case mode
-  when :minified_only
+def find_file_command(type, postfix)
+  case type
+  when :min
     ["-name", "*min.#{postfix}"]
-  when :not_minified_only
+  when :not_min
     ["-name", "*.#{postfix}", "-not", "-name", "*min.#{postfix}"]
   else
     ["-name", "*.#{postfix}"]
