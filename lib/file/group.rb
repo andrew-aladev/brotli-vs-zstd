@@ -1,37 +1,7 @@
-require "shellwords"
-
-require_relative "colorize"
+require_relative "../common/colorize"
 
 DEFAULT_HISTOGRAM_START_SIZE      = 1 << 12 # 4KB
 DEFAULT_HISTOGRAM_SIZE_MULTIPLIER = 2
-
-def find_file_command(mode, postfix)
-  case mode
-  when :minified_only
-    ["-name", "*min.#{postfix}"]
-  when :not_minified_only
-    ["-name", "*.#{postfix}", "-not", "-name", "*min.#{postfix}"]
-  else
-    ["-name", "*.#{postfix}"]
-  end
-end
-
-def find_file_pathes(root_path, mode, &_block)
-  raise StandardError, "root path is required" if root_path.blank?
-
-  command = ["find", Shellwords.shellescape(root_path), "-type", "f"]
-  command << yield(mode)
-  command = command.join " "
-
-  warn "reading files from root path: #{root_path}, command: #{command}"
-
-  pathes = IO.popen(command) { |io| io.readlines :chomp => true }
-
-  pathes_text = colorize_length pathes.length
-  warn "found #{pathes_text} file pathes"
-
-  pathes
-end
 
 def group_file_pathes_by_size_histogram(file_pathes, start_size = DEFAULT_HISTOGRAM_START_SIZE, size_multiplier = DEFAULT_HISTOGRAM_SIZE_MULTIPLIER)
   warn "collecting file sizes"

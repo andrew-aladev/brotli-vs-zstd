@@ -22,15 +22,3 @@ end
 def format_filesize(size)
   Filesize.new(size).pretty
 end
-
-# require "descriptive_statistics"
-
-# def get_descriptive_statistics(object)
-#   object.descriptive_statistics
-#     .dup.tap { |stats| stats.delete :number }
-#     .transform_values do |value|
-#       next nil if value.nil?
-#
-#       float_to_string value
-#     end
-# end
