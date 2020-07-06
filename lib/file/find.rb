@@ -31,7 +31,7 @@ def find_file_pathes(root_path, postfix, type)
   command << find_file_command(postfix, type)
   command = command.join " "
 
-  warn "reading files from root path: #{root_path}, command: #{command}"
+  warn "reading files from root path: #{root_path}, postfix: #{postfix}, type: #{type}"
 
   pathes = IO.popen(command) { |io| io.readlines :chomp => true }
 
