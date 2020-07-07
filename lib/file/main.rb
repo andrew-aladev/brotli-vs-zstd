@@ -7,6 +7,8 @@ require_relative "group"
 def process_files(vendor, root_path, option_groups)
   warn "-- processing files, vendor: #{vendor}, root path: #{root_path}"
 
+  files_data = []
+
   option_groups.each do |options|
     postfix = options[:postfix]
     type    = options[:type]
@@ -20,7 +22,11 @@ def process_files(vendor, root_path, option_groups)
     pathes_length_text = colorize_length pathes.length
     warn "- processing #{pathes_length_text} files"
 
-    get_processor_results pathes
+    processor_data = get_processor_data pathes
+    files_data << processor_data.merge(
+      :from_size => nil,
+      :to_size   => nil
+    )
 
     groups = group_file_pathes_by_size_histogram pathes
     groups.each do |group|
@@ -42,7 +48,13 @@ def process_files(vendor, root_path, option_groups)
         "from size: #{from_size_text}, " \
         "to size: #{to_size_text}"
 
-      get_processor_results pathes
+      processor_data = get_processor_data pathes
+      files_data << processor_data.merge(
+        :from_size => from_size,
+        :to_size   => to_size
+      )
     end
   end
+
+  save_files_data files_data
 end
