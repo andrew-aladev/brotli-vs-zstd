@@ -1,5 +1,9 @@
 require_relative "../common/data"
 
-def save_files_data(vendor, postfix, type, data)
-  save_data [vendor, postfix], type
+def load_files_data(vendor, extension, type)
+  load_data [vendor, extension], type.to_s
+end
+
+def save_files_data(vendor, extension, type, data)
+  save_data [vendor, extension], type.to_s, data
 end

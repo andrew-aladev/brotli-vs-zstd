@@ -1,19 +1,19 @@
 require_relative "../common/colorize"
 require_relative "../common/format"
 require_relative "../processor/main"
+require_relative "data"
 require_relative "find"
 require_relative "group"
 
 def process_files(vendor, root_path, option_groups)
   warn "-- processing files, vendor: #{vendor}, root path: #{root_path}"
 
-  files_data = []
-
   option_groups.each do |options|
-    postfix = options[:postfix]
-    type    = options[:type]
+    extension = options[:extension]
+    type      = options[:type]
+    data      = []
 
-    pathes = find_file_pathes root_path, postfix, type
+    pathes = find_file_pathes root_path, extension, type
     if pathes.empty?
       warn "no files for processing"
       next
@@ -23,7 +23,7 @@ def process_files(vendor, root_path, option_groups)
     warn "- processing #{pathes_length_text} files"
 
     processor_data = get_processor_data pathes
-    files_data << processor_data.merge(
+    data << processor_data.merge(
       :from_size => nil,
       :to_size   => nil
     )
@@ -49,12 +49,12 @@ def process_files(vendor, root_path, option_groups)
         "to size: #{to_size_text}"
 
       processor_data = get_processor_data pathes
-      files_data << processor_data.merge(
+      data << processor_data.merge(
         :from_size => from_size,
         :to_size   => to_size
       )
     end
-  end
 
-  save_files_data files_data
+    save_files_data vendor, extension, type, data
+  end
 end

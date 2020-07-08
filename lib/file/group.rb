@@ -4,10 +4,10 @@ require_relative "../common/format"
 DEFAULT_HISTOGRAM_START_SIZE      = 1 << 11 # 2KB
 DEFAULT_HISTOGRAM_SIZE_MULTIPLIER = 2
 
-def group_file_pathes_by_size_histogram(file_pathes, start_size = DEFAULT_HISTOGRAM_START_SIZE, size_multiplier = DEFAULT_HISTOGRAM_SIZE_MULTIPLIER)
+def group_file_pathes_by_size_histogram(pathes, start_size = DEFAULT_HISTOGRAM_START_SIZE, size_multiplier = DEFAULT_HISTOGRAM_SIZE_MULTIPLIER)
   warn "collecting file sizes"
 
-  objects = file_pathes.map do |path|
+  objects = pathes.map do |path|
     {
       :path => path,
       :size => File.size(path)
@@ -15,7 +15,7 @@ def group_file_pathes_by_size_histogram(file_pathes, start_size = DEFAULT_HISTOG
   end
 
   start_size_text = format_filesize start_size
-  warn "grouping file pathes by histogram, start size: #{start_size_text}, size multiplier: #{size_multiplier}"
+  warn "- grouping file pathes by histogram, start size: #{start_size_text}, size multiplier: #{size_multiplier}"
 
   groups    = []
   from_size = 0

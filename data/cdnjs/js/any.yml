@@ -1,0 +1,11 @@
+---
+- :from_size: 
+  :to_size: 
+- :from_size: 2048
+  :to_size: 4095
+- :from_size: 4096
+  :to_size: 8191
+- :from_size: 8192
+  :to_size: 16383
+- :from_size: 65536
+  :to_size: 131071

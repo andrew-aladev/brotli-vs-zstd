@@ -1,5 +1,4 @@
 require "brs"
-require "ocg"
 require "zstds"
 
 PROCESSOR_TYPES = %i[brotli zstd].freeze
@@ -11,21 +10,12 @@ COMPRESSION_LEVELS = {
 .freeze
 
 def get_processor_params_combinations
-  generator = nil
-
-  PROCESSOR_TYPES.each do |type|
-    current_generator = OCG.new(
-      :type              => [type],
-      :compression_level => COMPRESSION_LEVELS[type]
-    )
-
-    generator =
-      if generator.nil?
-        current_generator
-      else
-        generator.or current_generator
-      end
+  PROCESSOR_TYPES.flat_map do |type|
+    COMPRESSION_LEVELS[type].map do |compression_level|
+      {
+        :type              => type,
+        :compression_level => compression_level
+      }
+    end
   end
-
-  generator.to_a
 end
