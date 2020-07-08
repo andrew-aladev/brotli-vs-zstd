@@ -22,8 +22,8 @@ def process_files(vendor, root_path, option_groups)
     pathes_length_text = colorize_length pathes.length
     warn "- processing #{pathes_length_text} files"
 
-    processor_data = get_processor_data pathes
-    data << processor_data.merge(
+    processor_results = get_processor_results pathes
+    data << processor_results.merge(
       :from_size => nil,
       :to_size   => nil
     )
@@ -48,8 +48,8 @@ def process_files(vendor, root_path, option_groups)
         "from size: #{from_size_text}, " \
         "to size: #{to_size_text}"
 
-      processor_data = get_processor_data pathes
-      data << processor_data.merge(
+      processor_results = get_processor_results pathes
+      data << processor_results.merge(
         :from_size => from_size,
         :to_size   => to_size
       )

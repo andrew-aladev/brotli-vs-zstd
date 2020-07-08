@@ -48,7 +48,11 @@ def create_compressor_data(type, compression_level)
       raise_invalid_processor type
     end
 
-  [processor, write_io, read_io]
+  {
+    :processor => processor,
+    :write_io  => write_io,
+    :read_io   => read_io
+  }
 end
 
 def create_decompressor_data(type)
@@ -64,5 +68,15 @@ def create_decompressor_data(type)
       raise_invalid_processor type
     end
 
-  [processor, write_io, read_io]
+  {
+    :processor => processor,
+    :write_io  => write_io,
+    :read_io   => read_io
+  }
+end
+
+def close_processor_data(processor_data)
+  processor_data[:processor].close
+  processor_data[:write_io].close
+  processor_data[:read_io].close
 end
