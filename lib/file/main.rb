@@ -22,11 +22,17 @@ def process_files(vendor, root_path, option_groups)
     pathes_length_text = colorize_length pathes.length
     warn "- processing #{pathes_length_text} files"
 
-    processor_results = get_processor_results pathes
-    data << processor_results.merge(
-      :from_size => nil,
-      :to_size   => nil
-    )
+    processor_stat_datas = get_processor_stat_datas pathes
+
+    new_data = processor_stat_datas.map do |stat_data|
+      {
+        :from_size => nil,
+        :to_size   => nil,
+        :count     => pathes.length,
+        :stat_data => stat_data
+      }
+    end
+    data.concat new_data
 
     groups = group_file_pathes_by_size_histogram pathes
     groups.each do |group|
@@ -48,13 +54,21 @@ def process_files(vendor, root_path, option_groups)
         "from size: #{from_size_text}, " \
         "to size: #{to_size_text}"
 
-      processor_results = get_processor_results pathes
-      data << processor_results.merge(
-        :from_size => from_size,
-        :to_size   => to_size
-      )
+      processor_stat_datas = get_processor_stat_datas pathes
+
+      new_data = processor_stat_datas.map do |stat_data|
+        {
+          :from_size => from_size,
+          :to_size   => to_size,
+          :count     => pathes.length,
+          :stat_data => stat_data
+        }
+      end
+      data.concat new_data
     end
 
     save_files_data vendor, extension, type, data
   end
+
+  nil
 end

@@ -16,10 +16,31 @@ def get_efficiency_from_result(result)
   compress_time           = result[:compress_time]
   decompress_time         = result[:decompress_time]
 
+  ratio =
+    if !compressed_content_size.zero?
+      content_size.to_f / compressed_content_size
+    else
+      0
+    end
+
+  compress_performance =
+    if !compress_time.zero?
+      content_size.to_f / compress_time
+    else
+      0
+    end
+
+  decompress_performance =
+    if !decompress_time.zero?
+      compressed_content_size.to_f / decompress_time
+    else
+      0
+    end
+
   {
-    :ratio                  => content_size.to_f / compressed_content_size,
-    :compress_performance   => content_size.to_f / compress_time,
-    :decompress_performance => compressed_content_size.to_f / decompress_time
+    :ratio                  => ratio,
+    :compress_performance   => compress_performance,
+    :decompress_performance => decompress_performance
   }
 end
 
@@ -28,7 +49,9 @@ def get_efficiencies_from_results(results)
 end
 
 def get_stats_from_efficiencies(efficiencies)
-  efficiencies.keys.each_with_object({}) do |key, stat_groups|
+  first_efficiency = efficiencies.first
+
+  first_efficiency.keys.each_with_object({}) do |key, stat_groups|
     values = efficiencies.map { |efficiency| efficiency[key] }
 
     stat_groups[key] = STAT_METHODS.each_with_object({}) do |stat_method, stats|
@@ -37,9 +60,9 @@ def get_stats_from_efficiencies(efficiencies)
   end
 end
 
-def get_stat_data_from_result_data(total_result, results)
+def get_stat_data_from_result_data(total_result, single_results)
   {
-    :total => get_efficiency_from_result(total_result),
-    :stats => get_stats_from_efficiencies(get_efficiencies_from_results(results))
+    :total_efficiency => get_efficiency_from_result(total_result),
+    :single_stats     => get_stats_from_efficiencies(get_efficiencies_from_results(single_results))
   }
 end
