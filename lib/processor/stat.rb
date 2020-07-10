@@ -60,9 +60,9 @@ def get_stats_from_efficiencies(efficiencies)
   end
 end
 
-def get_stat_data_from_result_data(total_result, single_results)
+def get_stats_from_result_data(total_result, single_results)
   {
-    :total_efficiency => get_efficiency_from_result(total_result),
-    :single_stats     => get_stats_from_efficiencies(get_efficiencies_from_results(single_results))
+    :total  => get_efficiency_from_result(total_result),
+    :single => get_stats_from_efficiencies(get_efficiencies_from_results(single_results))
   }
 end

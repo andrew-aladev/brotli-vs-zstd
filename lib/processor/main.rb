@@ -2,7 +2,7 @@ require_relative "../common/format"
 require_relative "data"
 require_relative "params"
 
-def get_processor_stat_datas(pathes)
+def get_processor_stats(pathes)
   params_combinations = get_processor_params_combinations
 
   processors = params_combinations.map do |params|
@@ -24,5 +24,5 @@ def get_processor_stat_datas(pathes)
     processors.each(&:close)
   end
 
-  processors.map(&:get_stat_data)
+  processors.map(&:get_stats)
 end

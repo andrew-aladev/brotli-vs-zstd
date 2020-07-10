@@ -9,6 +9,7 @@ class Processor
     @type              = type
     @compression_level = compression_level
 
+    @total_content  = String.new :encoding => Encoding::BINARY
     @total_result   = self.class.get_result
     @single_results = []
 
@@ -21,7 +22,7 @@ class Processor
 
     compression_options = get_compression_options
 
-    @compressor_processor =
+    @compressor =
       case @type
       when :brotli
         BRS::Stream::Writer.new @compressor_write_io, compression_options
@@ -37,7 +38,7 @@ class Processor
   protected def init_decompressor
     @decompressor_read_io, @decompressor_write_io = IO.pipe
 
-    @decompressor_processor =
+    @decompressor =
       case @type
       when :brotli
         BRS::Stream::Reader.new @decompressor_read_io
@@ -52,7 +53,7 @@ class Processor
 
   def process(content)
     new_total_result = get_total_result content
-    @total_result = self.class.sum_results @total_result, new_total_result
+    @total_result    = self.class.sum_results @total_result, new_total_result
 
     new_single_result = get_single_result content
     @single_results << new_single_result
@@ -60,7 +61,7 @@ class Processor
     nil
   end
 
-  protected def get_total_result(content)
+  protected def get_total_result(_content)
     self.class.get_result
   end
 
@@ -99,14 +100,64 @@ class Processor
   end
 
   def close
+    flush
+
     close_compressor
     close_decompressor
 
     nil
   end
 
+  protected def flush
+    new_total_result = get_last_total_result
+    @total_result    = self.class.sum_results @total_result, new_total_result
+
+    nil
+  end
+
+  protected def get_last_total_result
+    is_compressor_flushed = false
+
+    compress_time = 0
+
+    loop do
+      unless is_compressor_flushed
+        is_compressor_flushed, new_compress_time = flush_compressor_nonblock
+        compress_time += new_compress_time
+      end
+
+      break if is_compressor_flushed
+    end
+
+    self.class.get_result 0, 0, compress_time, 0
+  end
+
+  protected def flush_compressor_nonblock
+    is_flushed     = false
+    processed_time = 0
+
+    IO.select nil, [@compressor_write_io]
+
+    loop do
+      begin
+        result, time = with_time { @compressor.flush_nonblock }
+      rescue IO::WaitWritable
+        break
+      end
+
+      processed_time += time
+
+      if result
+        is_flushed = true
+        break
+      end
+    end
+
+    [is_flushed, processed_time]
+  end
+
   protected def close_compressor
-    @compressor_processor.close
+    @compressor.close
     @compressor_write_io.close
     @compressor_read_io.close
 
@@ -114,21 +165,21 @@ class Processor
   end
 
   protected def close_decompressor
-    @decompressor_processor.close
+    @decompressor.close
     @decompressor_write_io.close
     @decompressor_read_io.close
 
     nil
   end
 
-  def get_stat_data
-    stat_data = get_stat_data_from_result_data @total_result, @single_results
+  def get_stats
+    stats = get_stats_from_result_data @total_result, @single_results
 
     {
       :type              => @type,
       :compression_level => @compression_level
     }
-    .merge stat_data
+    .merge stats
   end
 
   protected def get_compression_options
