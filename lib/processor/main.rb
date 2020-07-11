@@ -1,5 +1,5 @@
 require_relative "../common/format"
-require_relative "data"
+require_relative "wrapper"
 require_relative "params"
 
 def get_processor_stats(pathes)

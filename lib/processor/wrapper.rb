@@ -3,6 +3,7 @@ require "zstds"
 
 require_relative "../common/time"
 require_relative "stat"
+require_relative "utils"
 
 class Processor
   def initialize(type, compression_level)
@@ -122,7 +123,7 @@ class Processor
 
     loop do
       unless is_compressor_flushed
-        is_compressor_flushed, new_compress_time = flush_compressor_nonblock
+        is_compressor_flushed, new_compress_time = flush_compressor_nonblock @compressor, @compressor_write_io
         compress_time += new_compress_time
       end
 
@@ -130,30 +131,6 @@ class Processor
     end
 
     self.class.get_result 0, 0, compress_time, 0
-  end
-
-  protected def flush_compressor_nonblock
-    is_flushed     = false
-    processed_time = 0
-
-    IO.select nil, [@compressor_write_io]
-
-    loop do
-      begin
-        result, time = with_time { @compressor.flush_nonblock }
-      rescue IO::WaitWritable
-        break
-      end
-
-      processed_time += time
-
-      if result
-        is_flushed = true
-        break
-      end
-    end
-
-    [is_flushed, processed_time]
   end
 
   protected def close_compressor

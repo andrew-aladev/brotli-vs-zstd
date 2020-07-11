@@ -18,18 +18,18 @@
         :mean: 2.328883495145631
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 60593616.94160028
-        :max: 60593616.94160028
-        :mode: 60593616.94160028
-        :median: 60593616.94160028
-        :mean: 60593616.94160028
+        :min: 45184831.35400605
+        :max: 45184831.35400605
+        :mode: 45184831.35400605
+        :median: 45184831.35400605
+        :mean: 45184831.35400605
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 27682590.124714497
-        :max: 27682590.124714497
-        :mode: 27682590.124714497
-        :median: 27682590.124714497
-        :mean: 27682590.124714497
+        :min: 27804020.941314824
+        :max: 27804020.941314824
+        :mode: 27804020.941314824
+        :median: 27804020.941314824
+        :mean: 27804020.941314824
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 1
@@ -46,18 +46,18 @@
         :mean: 2.429113924050633
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 59409933.90182445
-        :max: 59409933.90182445
-        :mode: 59409933.90182445
-        :median: 59409933.90182445
-        :mean: 59409933.90182445
+        :min: 45004690.247566506
+        :max: 45004690.247566506
+        :mode: 45004690.247566506
+        :median: 45004690.247566506
+        :mean: 45004690.247566506
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 50446998.98939457
-        :max: 50446998.98939457
-        :mode: 50446998.98939457
-        :median: 50446998.98939457
-        :mean: 50446998.98939457
+        :min: 45709665.21785147
+        :max: 45709665.21785147
+        :mode: 45709665.21785147
+        :median: 45709665.21785147
+        :mean: 45709665.21785147
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 2
@@ -74,18 +74,18 @@
         :mean: 2.55525965379494
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 40997262.45577355
-        :max: 40997262.45577355
-        :mode: 40997262.45577355
-        :median: 40997262.45577355
-        :mean: 40997262.45577355
+        :min: 36559342.953302324
+        :max: 36559342.953302324
+        :mode: 36559342.953302324
+        :median: 36559342.953302324
+        :mean: 36559342.953302324
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 50647418.87414626
-        :max: 50647418.87414626
-        :mode: 50647418.87414626
-        :median: 50647418.87414626
-        :mean: 50647418.87414626
+        :min: 47715880.24020144
+        :max: 47715880.24020144
+        :mode: 47715880.24020144
+        :median: 47715880.24020144
+        :mean: 47715880.24020144
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 3
@@ -102,18 +102,18 @@
         :mean: 2.7142857142857144
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 34900426.7272996
-        :max: 34900426.7272996
-        :mode: 34900426.7272996
-        :median: 34900426.7272996
-        :mean: 34900426.7272996
+        :min: 32283571.615314543
+        :max: 32283571.615314543
+        :mode: 32283571.615314543
+        :median: 32283571.615314543
+        :mean: 32283571.615314543
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 51810053.09790924
-        :max: 51810053.09790924
-        :mode: 51810053.09790924
-        :median: 51810053.09790924
-        :mean: 51810053.09790924
+        :min: 50619313.35255807
+        :max: 50619313.35255807
+        :mode: 50619313.35255807
+        :median: 50619313.35255807
+        :mean: 50619313.35255807
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 4
@@ -130,18 +130,18 @@
         :mean: 2.9477726574500767
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 19764353.17964911
-        :max: 19764353.17964911
-        :mode: 19764353.17964911
-        :median: 19764353.17964911
-        :mean: 19764353.17964911
+        :min: 15225446.317667002
+        :max: 15225446.317667002
+        :mode: 15225446.317667002
+        :median: 15225446.317667002
+        :mean: 15225446.317667002
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 45790241.76946013
-        :max: 45790241.76946013
-        :mode: 45790241.76946013
-        :median: 45790241.76946013
-        :mean: 45790241.76946013
+        :min: 42248033.55103062
+        :max: 42248033.55103062
+        :mode: 42248033.55103062
+        :median: 42248033.55103062
+        :mean: 42248033.55103062
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 5
@@ -158,18 +158,18 @@
         :mean: 3.285958904109589
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 18935881.058656674
-        :max: 18935881.058656674
-        :mode: 18935881.058656674
-        :median: 18935881.058656674
-        :mean: 18935881.058656674
+        :min: 14424016.671491237
+        :max: 14424016.671491237
+        :mode: 14424016.671491237
+        :median: 14424016.671491237
+        :mean: 14424016.671491237
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 41636976.3770676
-        :max: 41636976.3770676
-        :mode: 41636976.3770676
-        :median: 41636976.3770676
-        :mean: 41636976.3770676
+        :min: 39226225.131303966
+        :max: 39226225.131303966
+        :mode: 39226225.131303966
+        :median: 39226225.131303966
+        :mean: 39226225.131303966
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 6
@@ -186,18 +186,18 @@
         :mean: 3.2915951972555746
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 21802605.17516319
-        :max: 21802605.17516319
-        :mode: 21802605.17516319
-        :median: 21802605.17516319
-        :mean: 21802605.17516319
+        :min: 15950726.096668364
+        :max: 15950726.096668364
+        :mode: 15950726.096668364
+        :median: 15950726.096668364
+        :mean: 15950726.096668364
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 44083179.67582841
-        :max: 44083179.67582841
-        :mode: 44083179.67582841
-        :median: 44083179.67582841
-        :mean: 44083179.67582841
+        :min: 41122946.531526245
+        :max: 41122946.531526245
+        :mode: 41122946.531526245
+        :median: 41122946.531526245
+        :mean: 41122946.531526245
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 7
@@ -214,18 +214,18 @@
         :mean: 3.297250859106529
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 16669851.220315797
-        :max: 16669851.220315797
-        :mode: 16669851.220315797
-        :median: 16669851.220315797
-        :mean: 16669851.220315797
+        :min: 13152303.50200866
+        :max: 13152303.50200866
+        :mode: 13152303.50200866
+        :median: 13152303.50200866
+        :mean: 13152303.50200866
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 39489760.152403146
-        :max: 39489760.152403146
-        :mode: 39489760.152403146
-        :median: 39489760.152403146
-        :mean: 39489760.152403146
+        :min: 37524180.913207345
+        :max: 37524180.913207345
+        :mode: 37524180.913207345
+        :median: 37524180.913207345
+        :mean: 37524180.913207345
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 8
@@ -242,18 +242,18 @@
         :mean: 3.297250859106529
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 18262449.89337782
-        :max: 18262449.89337782
-        :mode: 18262449.89337782
-        :median: 18262449.89337782
-        :mean: 18262449.89337782
+        :min: 14382827.147750748
+        :max: 14382827.147750748
+        :mode: 14382827.147750748
+        :median: 14382827.147750748
+        :mean: 14382827.147750748
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 43644531.20460249
-        :max: 43644531.20460249
-        :mode: 43644531.20460249
-        :median: 43644531.20460249
-        :mean: 43644531.20460249
+        :min: 41168553.85205883
+        :max: 41168553.85205883
+        :mode: 41168553.85205883
+        :median: 41168553.85205883
+        :mean: 41168553.85205883
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 9
@@ -270,18 +270,18 @@
         :mean: 3.3029259896729775
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 2289981.6016185936
-        :max: 2289981.6016185936
-        :mode: 2289981.6016185936
-        :median: 2289981.6016185936
-        :mean: 2289981.6016185936
+        :min: 1903597.9892856183
+        :max: 1903597.9892856183
+        :mode: 1903597.9892856183
+        :median: 1903597.9892856183
+        :mean: 1903597.9892856183
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 19056677.18887443
-        :max: 19056677.18887443
-        :mode: 19056677.18887443
-        :median: 19056677.18887443
-        :mean: 19056677.18887443
+        :min: 7457610.095921197
+        :max: 7457610.095921197
+        :mode: 7457610.095921197
+        :median: 7457610.095921197
+        :mean: 7457610.095921197
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 10
@@ -298,18 +298,18 @@
         :mean: 3.560296846011132
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 1057212.8999498088
-        :max: 1057212.8999498088
-        :mode: 1057212.8999498088
-        :median: 1057212.8999498088
-        :mean: 1057212.8999498088
+        :min: 882086.3411386224
+        :max: 882086.3411386224
+        :mode: 882086.3411386224
+        :median: 882086.3411386224
+        :mean: 882086.3411386224
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 22970374.604390815
-        :max: 22970374.604390815
-        :mode: 22970374.604390815
-        :median: 22970374.604390815
-        :mean: 22970374.604390815
+        :min: 11591646.946270984
+        :max: 11591646.946270984
+        :mode: 11591646.946270984
+        :median: 11591646.946270984
+        :mean: 11591646.946270984
         :standard_deviation: 0.0
   - :type: :brotli
     :compression_level: 11
@@ -326,18 +326,18 @@
         :mean: 3.580223880597015
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 633781.374029189
-        :max: 633781.374029189
-        :mode: 633781.374029189
-        :median: 633781.374029189
-        :mean: 633781.374029189
+        :min: 564364.2921268077
+        :max: 564364.2921268077
+        :mode: 564364.2921268077
+        :median: 564364.2921268077
+        :mean: 564364.2921268077
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 10631545.96801615
-        :max: 10631545.96801615
-        :mode: 10631545.96801615
-        :median: 10631545.96801615
-        :mean: 10631545.96801615
+        :min: 21872194.524235327
+        :max: 21872194.524235327
+        :mode: 21872194.524235327
+        :median: 21872194.524235327
+        :mean: 21872194.524235327
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 0
@@ -354,18 +354,18 @@
         :mean: 2.5967523680649527
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 32552457.80173889
-        :max: 32552457.80173889
-        :mode: 32552457.80173889
-        :median: 32552457.80173889
-        :mean: 32552457.80173889
+        :min: 27102987.589312263
+        :max: 27102987.589312263
+        :mode: 27102987.589312263
+        :median: 27102987.589312263
+        :mean: 27102987.589312263
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 37383653.539468795
-        :max: 37383653.539468795
-        :mode: 37383653.539468795
-        :median: 37383653.539468795
-        :mean: 37383653.539468795
+        :min: 34195551.13617465
+        :max: 34195551.13617465
+        :mode: 34195551.13617465
+        :median: 34195551.13617465
+        :mean: 34195551.13617465
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 1
@@ -382,18 +382,18 @@
         :mean: 2.5758389261744967
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 68503916.0808389
-        :max: 68503916.0808389
-        :mode: 68503916.0808389
-        :median: 68503916.0808389
-        :mean: 68503916.0808389
+        :min: 60421916.603861436
+        :max: 60421916.603861436
+        :mode: 60421916.603861436
+        :median: 60421916.603861436
+        :mean: 60421916.603861436
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 69431499.08907454
-        :max: 69431499.08907454
-        :mode: 69431499.08907454
-        :median: 69431499.08907454
-        :mean: 69431499.08907454
+        :min: 64884169.14329746
+        :max: 64884169.14329746
+        :mode: 64884169.14329746
+        :median: 64884169.14329746
+        :mean: 64884169.14329746
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 2
@@ -410,18 +410,18 @@
         :mean: 2.525
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 78560616.56732398
-        :max: 78560616.56732398
-        :mode: 78560616.56732398
-        :median: 78560616.56732398
-        :mean: 78560616.56732398
+        :min: 70262150.16165721
+        :max: 70262150.16165721
+        :mode: 70262150.16165721
+        :median: 70262150.16165721
+        :mean: 70262150.16165721
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 75098825.52130231
-        :max: 75098825.52130231
-        :mode: 75098825.52130231
-        :median: 75098825.52130231
-        :mean: 75098825.52130231
+        :min: 68462292.72844774
+        :max: 68462292.72844774
+        :mode: 68462292.72844774
+        :median: 68462292.72844774
+        :mean: 68462292.72844774
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 3
@@ -438,18 +438,18 @@
         :mean: 2.5967523680649527
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 72524559.57575285
-        :max: 72524559.57575285
-        :mode: 72524559.57575285
-        :median: 72524559.57575285
-        :mean: 72524559.57575285
+        :min: 66047148.53164096
+        :max: 66047148.53164096
+        :mode: 66047148.53164096
+        :median: 66047148.53164096
+        :mean: 66047148.53164096
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 77067480.44680712
-        :max: 77067480.44680712
-        :mode: 77067480.44680712
-        :median: 77067480.44680712
-        :mean: 77067480.44680712
+        :min: 68801778.18649644
+        :max: 68801778.18649644
+        :mode: 68801778.18649644
+        :median: 68801778.18649644
+        :mean: 68801778.18649644
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 4
@@ -466,18 +466,1002 @@
         :mean: 2.718130311614731
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 62105573.025612675
-        :max: 62105573.025612675
-        :mode: 62105573.025612675
-        :median: 62105573.025612675
-        :mean: 62105573.025612675
+        :min: 46254341.05084489
+        :max: 46254341.05084489
+        :mode: 46254341.05084489
+        :median: 46254341.05084489
+        :mean: 46254341.05084489
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 76506325.19103104
-        :max: 76506325.19103104
-        :mode: 76506325.19103104
-        :median: 76506325.19103104
-        :mean: 76506325.19103104
+        :min: 47325385.843940005
+        :max: 47325385.843940005
+        :mode: 47325385.843940005
+        :median: 47325385.843940005
+        :mean: 47325385.843940005
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 5
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.7611510791366904
+        :max: 2.7611510791366904
+        :mode: 2.7611510791366904
+        :median: 2.7611510791366904
+        :mean: 2.7611510791366904
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 44133201.40485241
+        :max: 44133201.40485241
+        :mode: 44133201.40485241
+        :median: 44133201.40485241
+        :mean: 44133201.40485241
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 75240856.15005308
+        :max: 75240856.15005308
+        :mode: 75240856.15005308
+        :median: 75240856.15005308
+        :mean: 75240856.15005308
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 6
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.7892441860465116
+        :max: 2.7892441860465116
+        :mode: 2.7892441860465116
+        :median: 2.7892441860465116
+        :mean: 2.7892441860465116
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 37409595.08314622
+        :max: 37409595.08314622
+        :mode: 37409595.08314622
+        :median: 37409595.08314622
+        :mean: 37409595.08314622
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 77503698.62483433
+        :max: 77503698.62483433
+        :mode: 77503698.62483433
+        :median: 77503698.62483433
+        :mean: 77503698.62483433
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 7
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.7933042212518195
+        :max: 2.7933042212518195
+        :mode: 2.7933042212518195
+        :median: 2.7933042212518195
+        :mean: 2.7933042212518195
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 39233726.41327476
+        :max: 39233726.41327476
+        :mode: 39233726.41327476
+        :median: 39233726.41327476
+        :mean: 39233726.41327476
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 76189422.65614341
+        :max: 76189422.65614341
+        :mode: 76189422.65614341
+        :median: 76189422.65614341
+        :mean: 76189422.65614341
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 8
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.7933042212518195
+        :max: 2.7933042212518195
+        :mode: 2.7933042212518195
+        :median: 2.7933042212518195
+        :mean: 2.7933042212518195
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 41261717.43333483
+        :max: 41261717.43333483
+        :mode: 41261717.43333483
+        :median: 41261717.43333483
+        :mean: 41261717.43333483
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 80671685.64994404
+        :max: 80671685.64994404
+        :mode: 80671685.64994404
+        :median: 80671685.64994404
+        :mean: 80671685.64994404
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 9
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.7933042212518195
+        :max: 2.7933042212518195
+        :mode: 2.7933042212518195
+        :median: 2.7933042212518195
+        :mean: 2.7933042212518195
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 21124588.951326326
+        :max: 21124588.951326326
+        :mode: 21124588.951326326
+        :median: 21124588.951326326
+        :mean: 21124588.951326326
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 77390984.4671955
+        :max: 77390984.4671955
+        :mode: 77390984.4671955
+        :median: 77390984.4671955
+        :mean: 77390984.4671955
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 10
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.7933042212518195
+        :max: 2.7933042212518195
+        :mode: 2.7933042212518195
+        :median: 2.7933042212518195
+        :mean: 2.7933042212518195
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 25433051.912282728
+        :max: 25433051.912282728
+        :mode: 25433051.912282728
+        :median: 25433051.912282728
+        :mean: 25433051.912282728
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 80671616.7251756
+        :max: 80671616.7251756
+        :mode: 80671616.7251756
+        :median: 80671616.7251756
+        :mean: 80671616.7251756
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 11
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.781159420289855
+        :max: 2.781159420289855
+        :mode: 2.781159420289855
+        :median: 2.781159420289855
+        :mean: 2.781159420289855
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 15901689.094388302
+        :max: 15901689.094388302
+        :mode: 15901689.094388302
+        :median: 15901689.094388302
+        :mean: 15901689.094388302
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 74610752.57225804
+        :max: 74610752.57225804
+        :mode: 74610752.57225804
+        :median: 74610752.57225804
+        :mean: 74610752.57225804
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 12
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.8014598540145985
+        :max: 2.8014598540145985
+        :mode: 2.8014598540145985
+        :median: 2.8014598540145985
+        :mean: 2.8014598540145985
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 12533472.170034338
+        :max: 12533472.170034338
+        :mode: 12533472.170034338
+        :median: 12533472.170034338
+        :mean: 12533472.170034338
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 72740766.85211584
+        :max: 72740766.85211584
+        :mode: 72740766.85211584
+        :median: 72740766.85211584
+        :mean: 72740766.85211584
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 13
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.813782991202346
+        :max: 2.813782991202346
+        :mode: 2.813782991202346
+        :median: 2.813782991202346
+        :mean: 2.813782991202346
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 8806670.94000366
+        :max: 8806670.94000366
+        :mode: 8806670.94000366
+        :median: 8806670.94000366
+        :mean: 8806670.94000366
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 63857678.90674239
+        :max: 63857678.90674239
+        :mode: 63857678.90674239
+        :median: 63857678.90674239
+        :mean: 63857678.90674239
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 14
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.813782991202346
+        :max: 2.813782991202346
+        :mode: 2.813782991202346
+        :median: 2.813782991202346
+        :mean: 2.813782991202346
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 8819258.286228513
+        :max: 8819258.286228513
+        :mode: 8819258.286228513
+        :median: 8819258.286228513
+        :mean: 8819258.286228513
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 61491316.71706285
+        :max: 61491316.71706285
+        :mode: 61491316.71706285
+        :median: 61491316.71706285
+        :mean: 61491316.71706285
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 15
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.813782991202346
+        :max: 2.813782991202346
+        :mode: 2.813782991202346
+        :median: 2.813782991202346
+        :mean: 2.813782991202346
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 9252071.841570027
+        :max: 9252071.841570027
+        :mode: 9252071.841570027
+        :median: 9252071.841570027
+        :mean: 9252071.841570027
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 68206825.43514872
+        :max: 68206825.43514872
+        :mode: 68206825.43514872
+        :median: 68206825.43514872
+        :mean: 68206825.43514872
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 16
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.822058823529412
+        :max: 2.822058823529412
+        :mode: 2.822058823529412
+        :median: 2.822058823529412
+        :mean: 2.822058823529412
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 4646680.3163041435
+        :max: 4646680.3163041435
+        :mode: 4646680.3163041435
+        :median: 4646680.3163041435
+        :mean: 4646680.3163041435
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 64454974.48653465
+        :max: 64454974.48653465
+        :mode: 64454974.48653465
+        :median: 64454974.48653465
+        :mean: 64454974.48653465
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 17
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.822058823529412
+        :max: 2.822058823529412
+        :mode: 2.822058823529412
+        :median: 2.822058823529412
+        :mean: 2.822058823529412
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 4654129.553782392
+        :max: 4654129.553782392
+        :mode: 4654129.553782392
+        :median: 4654129.553782392
+        :mean: 4654129.553782392
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 61477273.14411411
+        :max: 61477273.14411411
+        :mode: 61477273.14411411
+        :median: 61477273.14411411
+        :mean: 61477273.14411411
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 18
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.822058823529412
+        :max: 2.822058823529412
+        :mode: 2.822058823529412
+        :median: 2.822058823529412
+        :mean: 2.822058823529412
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 4429497.410755986
+        :max: 4429497.410755986
+        :mode: 4429497.410755986
+        :median: 4429497.410755986
+        :mean: 4429497.410755986
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 50347980.07433262
+        :max: 50347980.07433262
+        :mode: 50347980.07433262
+        :median: 50347980.07433262
+        :mean: 50347980.07433262
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 19
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.822058823529412
+        :max: 2.822058823529412
+        :mode: 2.822058823529412
+        :median: 2.822058823529412
+        :mean: 2.822058823529412
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 4672760.615751688
+        :max: 4672760.615751688
+        :mode: 4672760.615751688
+        :median: 4672760.615751688
+        :mean: 4672760.615751688
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 54737152.79090784
+        :max: 54737152.79090784
+        :mode: 54737152.79090784
+        :median: 54737152.79090784
+        :mean: 54737152.79090784
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 20
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.822058823529412
+        :max: 2.822058823529412
+        :mode: 2.822058823529412
+        :median: 2.822058823529412
+        :mean: 2.822058823529412
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 4805838.107707445
+        :max: 4805838.107707445
+        :mode: 4805838.107707445
+        :median: 4805838.107707445
+        :mean: 4805838.107707445
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 40811424.39718988
+        :max: 40811424.39718988
+        :mode: 40811424.39718988
+        :median: 40811424.39718988
+        :mean: 40811424.39718988
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 21
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.822058823529412
+        :max: 2.822058823529412
+        :mode: 2.822058823529412
+        :median: 2.822058823529412
+        :mean: 2.822058823529412
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 4706049.720827179
+        :max: 4706049.720827179
+        :mode: 4706049.720827179
+        :median: 4706049.720827179
+        :mean: 4706049.720827179
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 52778654.3772148
+        :max: 52778654.3772148
+        :mode: 52778654.3772148
+        :median: 52778654.3772148
+        :mean: 52778654.3772148
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 22
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.822058823529412
+        :max: 2.822058823529412
+        :mode: 2.822058823529412
+        :median: 2.822058823529412
+        :mean: 2.822058823529412
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 4795833.483049644
+        :max: 4795833.483049644
+        :mode: 4795833.483049644
+        :median: 4795833.483049644
+        :mean: 4795833.483049644
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 59591618.24591473
+        :max: 59591618.24591473
+        :mode: 59591618.24591473
+        :median: 59591618.24591473
+        :mean: 59591618.24591473
+        :standard_deviation: 0.0
+- :from_size: 0
+  :to_size: 2047
+  :count: 1
+  :stats:
+  - :type: :brotli
+    :compression_level: 0
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.328883495145631
+        :max: 2.328883495145631
+        :mode: 2.328883495145631
+        :median: 2.328883495145631
+        :mean: 2.328883495145631
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 58825326.56443957
+        :max: 58825326.56443957
+        :mode: 58825326.56443957
+        :median: 58825326.56443957
+        :mean: 58825326.56443957
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 33310429.519186713
+        :max: 33310429.519186713
+        :mode: 33310429.519186713
+        :median: 33310429.519186713
+        :mean: 33310429.519186713
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 1
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.429113924050633
+        :max: 2.429113924050633
+        :mode: 2.429113924050633
+        :median: 2.429113924050633
+        :mean: 2.429113924050633
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 44245137.262622625
+        :max: 44245137.262622625
+        :mode: 44245137.262622625
+        :median: 44245137.262622625
+        :mean: 44245137.262622625
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 37638765.69843859
+        :max: 37638765.69843859
+        :mode: 37638765.69843859
+        :median: 37638765.69843859
+        :mean: 37638765.69843859
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 2
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.55525965379494
+        :max: 2.55525965379494
+        :mode: 2.55525965379494
+        :median: 2.55525965379494
+        :mean: 2.55525965379494
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 31987065.68382493
+        :max: 31987065.68382493
+        :mode: 31987065.68382493
+        :median: 31987065.68382493
+        :mean: 31987065.68382493
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 41992846.931262456
+        :max: 41992846.931262456
+        :mode: 41992846.931262456
+        :median: 41992846.931262456
+        :mean: 41992846.931262456
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 3
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.7142857142857144
+        :max: 2.7142857142857144
+        :mode: 2.7142857142857144
+        :median: 2.7142857142857144
+        :mean: 2.7142857142857144
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 31502394.07039461
+        :max: 31502394.07039461
+        :mode: 31502394.07039461
+        :median: 31502394.07039461
+        :mean: 31502394.07039461
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 47841382.41446959
+        :max: 47841382.41446959
+        :mode: 47841382.41446959
+        :median: 47841382.41446959
+        :mean: 47841382.41446959
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 4
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.9477726574500767
+        :max: 2.9477726574500767
+        :mode: 2.9477726574500767
+        :median: 2.9477726574500767
+        :mean: 2.9477726574500767
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 16527430.768130692
+        :max: 16527430.768130692
+        :mode: 16527430.768130692
+        :median: 16527430.768130692
+        :mean: 16527430.768130692
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 41680005.39921431
+        :max: 41680005.39921431
+        :mode: 41680005.39921431
+        :median: 41680005.39921431
+        :mean: 41680005.39921431
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 5
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 3.285958904109589
+        :max: 3.285958904109589
+        :mode: 3.285958904109589
+        :median: 3.285958904109589
+        :mean: 3.285958904109589
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 15661214.88710176
+        :max: 15661214.88710176
+        :mode: 15661214.88710176
+        :median: 15661214.88710176
+        :mean: 15661214.88710176
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 37558690.49948948
+        :max: 37558690.49948948
+        :mode: 37558690.49948948
+        :median: 37558690.49948948
+        :mean: 37558690.49948948
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 6
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 3.2915951972555746
+        :max: 3.2915951972555746
+        :mode: 3.2915951972555746
+        :median: 3.2915951972555746
+        :mean: 3.2915951972555746
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 17369659.185986325
+        :max: 17369659.185986325
+        :mode: 17369659.185986325
+        :median: 17369659.185986325
+        :mean: 17369659.185986325
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 40101812.32057263
+        :max: 40101812.32057263
+        :mode: 40101812.32057263
+        :median: 40101812.32057263
+        :mean: 40101812.32057263
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 7
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 3.297250859106529
+        :max: 3.297250859106529
+        :mode: 3.297250859106529
+        :median: 3.297250859106529
+        :mean: 3.297250859106529
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 14383905.694494639
+        :max: 14383905.694494639
+        :mode: 14383905.694494639
+        :median: 14383905.694494639
+        :mean: 14383905.694494639
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 38882955.1244778
+        :max: 38882955.1244778
+        :mode: 38882955.1244778
+        :median: 38882955.1244778
+        :mean: 38882955.1244778
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 8
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 3.297250859106529
+        :max: 3.297250859106529
+        :mode: 3.297250859106529
+        :median: 3.297250859106529
+        :mean: 3.297250859106529
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 14411018.09710274
+        :max: 14411018.09710274
+        :mode: 14411018.09710274
+        :median: 14411018.09710274
+        :mean: 14411018.09710274
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 39759518.150970854
+        :max: 39759518.150970854
+        :mode: 39759518.150970854
+        :median: 39759518.150970854
+        :mean: 39759518.150970854
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 9
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 3.3029259896729775
+        :max: 3.3029259896729775
+        :mode: 3.3029259896729775
+        :median: 3.3029259896729775
+        :mean: 3.3029259896729775
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 2377056.3800643333
+        :max: 2377056.3800643333
+        :mode: 2377056.3800643333
+        :median: 2377056.3800643333
+        :mean: 2377056.3800643333
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 23708479.512277473
+        :max: 23708479.512277473
+        :mode: 23708479.512277473
+        :median: 23708479.512277473
+        :mean: 23708479.512277473
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 10
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 3.560296846011132
+        :max: 3.560296846011132
+        :mode: 3.560296846011132
+        :median: 3.560296846011132
+        :mean: 3.560296846011132
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 837528.980403585
+        :max: 837528.980403585
+        :mode: 837528.980403585
+        :median: 837528.980403585
+        :mean: 837528.980403585
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 11505047.295725746
+        :max: 11505047.295725746
+        :mode: 11505047.295725746
+        :median: 11505047.295725746
+        :mean: 11505047.295725746
+        :standard_deviation: 0.0
+  - :type: :brotli
+    :compression_level: 11
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 3.580223880597015
+        :max: 3.580223880597015
+        :mode: 3.580223880597015
+        :median: 3.580223880597015
+        :mean: 3.580223880597015
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 535257.9938217982
+        :max: 535257.9938217982
+        :mode: 535257.9938217982
+        :median: 535257.9938217982
+        :mean: 535257.9938217982
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 11324980.854432264
+        :max: 11324980.854432264
+        :mode: 11324980.854432264
+        :median: 11324980.854432264
+        :mean: 11324980.854432264
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 0
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.5967523680649527
+        :max: 2.5967523680649527
+        :mode: 2.5967523680649527
+        :median: 2.5967523680649527
+        :mean: 2.5967523680649527
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 33322335.405958228
+        :max: 33322335.405958228
+        :mode: 33322335.405958228
+        :median: 33322335.405958228
+        :mean: 33322335.405958228
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 33526907.749218747
+        :max: 33526907.749218747
+        :mode: 33526907.749218747
+        :median: 33526907.749218747
+        :mean: 33526907.749218747
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 1
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.5758389261744967
+        :max: 2.5758389261744967
+        :mode: 2.5758389261744967
+        :median: 2.5758389261744967
+        :mean: 2.5758389261744967
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 71335624.33031721
+        :max: 71335624.33031721
+        :mode: 71335624.33031721
+        :median: 71335624.33031721
+        :mean: 71335624.33031721
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 70216742.7430004
+        :max: 70216742.7430004
+        :mode: 70216742.7430004
+        :median: 70216742.7430004
+        :mean: 70216742.7430004
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 2
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.525
+        :max: 2.525
+        :mode: 2.525
+        :median: 2.525
+        :mean: 2.525
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 78528454.06615384
+        :max: 78528454.06615384
+        :mode: 78528454.06615384
+        :median: 78528454.06615384
+        :mean: 78528454.06615384
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 31436126.865365025
+        :max: 31436126.865365025
+        :mode: 31436126.865365025
+        :median: 31436126.865365025
+        :mean: 31436126.865365025
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 3
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.5967523680649527
+        :max: 2.5967523680649527
+        :mode: 2.5967523680649527
+        :median: 2.5967523680649527
+        :mean: 2.5967523680649527
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 75736031.2910236
+        :max: 75736031.2910236
+        :mode: 75736031.2910236
+        :median: 75736031.2910236
+        :mean: 75736031.2910236
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 76675695.52375747
+        :max: 76675695.52375747
+        :mode: 76675695.52375747
+        :median: 76675695.52375747
+        :mean: 76675695.52375747
+        :standard_deviation: 0.0
+  - :type: :zstd
+    :compression_level: 4
+    :total:
+      :ratio: 0
+      :compress_performance: 0.0
+      :decompress_performance: 0
+    :single:
+      :ratio:
+        :min: 2.718130311614731
+        :max: 2.718130311614731
+        :mode: 2.718130311614731
+        :median: 2.718130311614731
+        :mean: 2.718130311614731
+        :standard_deviation: 0.0
+      :compress_performance:
+        :min: 51835449.80555084
+        :max: 51835449.80555084
+        :mode: 51835449.80555084
+        :median: 51835449.80555084
+        :mean: 51835449.80555084
+        :standard_deviation: 0.0
+      :decompress_performance:
+        :min: 74019695.84949496
+        :max: 74019695.84949496
+        :mode: 74019695.84949496
+        :median: 74019695.84949496
+        :mean: 74019695.84949496
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 5
@@ -501,11 +1485,11 @@
         :mean: 49440919.115436785
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 83573858.22118707
-        :max: 83573858.22118707
-        :mode: 83573858.22118707
-        :median: 83573858.22118707
-        :mean: 83573858.22118707
+        :min: 82482764.4338597
+        :max: 82482764.4338597
+        :mode: 82482764.4338597
+        :median: 82482764.4338597
+        :mean: 82482764.4338597
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 6
@@ -522,18 +1506,18 @@
         :mean: 2.7892441860465116
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 41583599.44091233
-        :max: 41583599.44091233
-        :mode: 41583599.44091233
-        :median: 41583599.44091233
-        :mean: 41583599.44091233
+        :min: 40649032.26052952
+        :max: 40649032.26052952
+        :mode: 40649032.26052952
+        :median: 40649032.26052952
+        :mean: 40649032.26052952
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 86053817.52558735
-        :max: 86053817.52558735
-        :mode: 86053817.52558735
-        :median: 86053817.52558735
-        :mean: 86053817.52558735
+        :min: 82642663.41956635
+        :max: 82642663.41956635
+        :mode: 82642663.41956635
+        :median: 82642663.41956635
+        :mean: 82642663.41956635
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 7
@@ -550,18 +1534,18 @@
         :mean: 2.7933042212518195
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 37416887.1825528
-        :max: 37416887.1825528
-        :mode: 37416887.1825528
-        :median: 37416887.1825528
-        :mean: 37416887.1825528
+        :min: 43690095.13804209
+        :max: 43690095.13804209
+        :mode: 43690095.13804209
+        :median: 43690095.13804209
+        :mean: 43690095.13804209
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 89406552.18232693
-        :max: 89406552.18232693
-        :mode: 89406552.18232693
-        :median: 89406552.18232693
-        :mean: 89406552.18232693
+        :min: 86144252.0222284
+        :max: 86144252.0222284
+        :mode: 86144252.0222284
+        :median: 86144252.0222284
+        :mean: 86144252.0222284
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 8
@@ -578,18 +1562,18 @@
         :mean: 2.7933042212518195
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 46253229.75340202
-        :max: 46253229.75340202
-        :mode: 46253229.75340202
-        :median: 46253229.75340202
-        :mean: 46253229.75340202
+        :min: 45259431.06695871
+        :max: 45259431.06695871
+        :mode: 45259431.06695871
+        :median: 45259431.06695871
+        :mean: 45259431.06695871
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 92787683.38308841
-        :max: 92787683.38308841
-        :mode: 92787683.38308841
-        :median: 92787683.38308841
-        :mean: 92787683.38308841
+        :min: 87907822.12528978
+        :max: 87907822.12528978
+        :mode: 87907822.12528978
+        :median: 87907822.12528978
+        :mean: 87907822.12528978
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 9
@@ -606,18 +1590,18 @@
         :mean: 2.7933042212518195
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 22990847.930732127
-        :max: 22990847.930732127
-        :mode: 22990847.930732127
-        :median: 22990847.930732127
-        :mean: 22990847.930732127
+        :min: 25453291.4665811
+        :max: 25453291.4665811
+        :mode: 25453291.4665811
+        :median: 25453291.4665811
+        :mean: 25453291.4665811
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 83515669.51914118
-        :max: 83515669.51914118
-        :mode: 83515669.51914118
-        :median: 83515669.51914118
-        :mean: 83515669.51914118
+        :min: 84139624.46189012
+        :max: 84139624.46189012
+        :mode: 84139624.46189012
+        :median: 84139624.46189012
+        :mean: 84139624.46189012
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 10
@@ -634,18 +1618,18 @@
         :mean: 2.7933042212518195
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 28858877.624578502
-        :max: 28858877.624578502
-        :mode: 28858877.624578502
-        :median: 28858877.624578502
-        :mean: 28858877.624578502
+        :min: 28893641.776370555
+        :max: 28893641.776370555
+        :mode: 28893641.776370555
+        :median: 28893641.776370555
+        :mean: 28893641.776370555
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 89058861.34674458
-        :max: 89058861.34674458
-        :mode: 89058861.34674458
-        :median: 89058861.34674458
-        :mean: 89058861.34674458
+        :min: 85394684.46595086
+        :max: 85394684.46595086
+        :mode: 85394684.46595086
+        :median: 85394684.46595086
+        :mean: 85394684.46595086
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 11
@@ -662,18 +1646,18 @@
         :mean: 2.781159420289855
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 16830971.864102904
-        :max: 16830971.864102904
-        :mode: 16830971.864102904
-        :median: 16830971.864102904
-        :mean: 16830971.864102904
+        :min: 16745639.864097802
+        :max: 16745639.864097802
+        :mode: 16745639.864097802
+        :median: 16745639.864097802
+        :mean: 16745639.864097802
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 81406293.66296603
-        :max: 81406293.66296603
-        :mode: 81406293.66296603
-        :median: 81406293.66296603
-        :mean: 81406293.66296603
+        :min: 80457053.0312206
+        :max: 80457053.0312206
+        :mode: 80457053.0312206
+        :median: 80457053.0312206
+        :mean: 80457053.0312206
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 12
@@ -690,18 +1674,18 @@
         :mean: 2.8014598540145985
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 13234026.710513322
-        :max: 13234026.710513322
-        :mode: 13234026.710513322
-        :median: 13234026.710513322
-        :mean: 13234026.710513322
+        :min: 13347521.938286044
+        :max: 13347521.938286044
+        :mode: 13347521.938286044
+        :median: 13347521.938286044
+        :mean: 13347521.938286044
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 79401867.88772069
-        :max: 79401867.88772069
-        :mode: 79401867.88772069
-        :median: 79401867.88772069
-        :mean: 79401867.88772069
+        :min: 74969885.75094363
+        :max: 74969885.75094363
+        :mode: 74969885.75094363
+        :median: 74969885.75094363
+        :mean: 74969885.75094363
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 13
@@ -718,18 +1702,18 @@
         :mean: 2.813782991202346
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 9444595.084819617
-        :max: 9444595.084819617
-        :mode: 9444595.084819617
-        :median: 9444595.084819617
-        :mean: 9444595.084819617
+        :min: 9767295.109377043
+        :max: 9767295.109377043
+        :mode: 9767295.109377043
+        :median: 9767295.109377043
+        :mean: 9767295.109377043
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 66155794.20654999
-        :max: 66155794.20654999
-        :mode: 66155794.20654999
-        :median: 66155794.20654999
-        :mean: 66155794.20654999
+        :min: 68687701.1205989
+        :max: 68687701.1205989
+        :mode: 68687701.1205989
+        :median: 68687701.1205989
+        :mean: 68687701.1205989
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 14
@@ -746,18 +1730,18 @@
         :mean: 2.813782991202346
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 10027066.207509601
-        :max: 10027066.207509601
-        :mode: 10027066.207509601
-        :median: 10027066.207509601
-        :mean: 10027066.207509601
+        :min: 9736470.956869535
+        :max: 9736470.956869535
+        :mode: 9736470.956869535
+        :median: 9736470.956869535
+        :mean: 9736470.956869535
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 72261063.50766489
-        :max: 72261063.50766489
-        :mode: 72261063.50766489
-        :median: 72261063.50766489
-        :mean: 72261063.50766489
+        :min: 69105280.77787943
+        :max: 69105280.77787943
+        :mode: 69105280.77787943
+        :median: 69105280.77787943
+        :mean: 69105280.77787943
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 15
@@ -774,18 +1758,18 @@
         :mean: 2.813782991202346
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 10281109.859922545
-        :max: 10281109.859922545
-        :mode: 10281109.859922545
-        :median: 10281109.859922545
-        :mean: 10281109.859922545
+        :min: 10281605.636296926
+        :max: 10281605.636296926
+        :mode: 10281605.636296926
+        :median: 10281605.636296926
+        :mean: 10281605.636296926
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 75384118.08486661
-        :max: 75384118.08486661
-        :mode: 75384118.08486661
-        :median: 75384118.08486661
-        :mean: 75384118.08486661
+        :min: 73428079.23328578
+        :max: 73428079.23328578
+        :mode: 73428079.23328578
+        :median: 73428079.23328578
+        :mean: 73428079.23328578
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 16
@@ -802,18 +1786,18 @@
         :mean: 2.822058823529412
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 5042807.290197461
-        :max: 5042807.290197461
-        :mode: 5042807.290197461
-        :median: 5042807.290197461
-        :mean: 5042807.290197461
+        :min: 5026942.2495986475
+        :max: 5026942.2495986475
+        :mode: 5026942.2495986475
+        :median: 5026942.2495986475
+        :mean: 5026942.2495986475
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 68624462.13144594
-        :max: 68624462.13144594
-        :mode: 68624462.13144594
-        :median: 68624462.13144594
-        :mean: 68624462.13144594
+        :min: 67938878.9983324
+        :max: 67938878.9983324
+        :mode: 67938878.9983324
+        :median: 67938878.9983324
+        :mean: 67938878.9983324
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 17
@@ -830,18 +1814,18 @@
         :mean: 2.822058823529412
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 5021798.640485527
-        :max: 5021798.640485527
-        :mode: 5021798.640485527
-        :median: 5021798.640485527
-        :mean: 5021798.640485527
+        :min: 5056800.066721564
+        :max: 5056800.066721564
+        :mode: 5056800.066721564
+        :median: 5056800.066721564
+        :mean: 5056800.066721564
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 65706819.081130184
-        :max: 65706819.081130184
-        :mode: 65706819.081130184
-        :median: 65706819.081130184
-        :mean: 65706819.081130184
+        :min: 65071773.22472545
+        :max: 65071773.22472545
+        :mode: 65071773.22472545
+        :median: 65071773.22472545
+        :mean: 65071773.22472545
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 18
@@ -858,18 +1842,18 @@
         :mean: 2.822058823529412
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 5173998.946717446
-        :max: 5173998.946717446
-        :mode: 5173998.946717446
-        :median: 5173998.946717446
-        :mean: 5173998.946717446
+        :min: 4807391.218808764
+        :max: 4807391.218808764
+        :mode: 4807391.218808764
+        :median: 4807391.218808764
+        :mean: 4807391.218808764
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 70848097.40365496
-        :max: 70848097.40365496
-        :mode: 70848097.40365496
-        :median: 70848097.40365496
-        :mean: 70848097.40365496
+        :min: 58459418.874803744
+        :max: 58459418.874803744
+        :mode: 58459418.874803744
+        :median: 58459418.874803744
+        :mean: 58459418.874803744
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 19
@@ -886,18 +1870,18 @@
         :mean: 2.822058823529412
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 5119777.171583131
-        :max: 5119777.171583131
-        :mode: 5119777.171583131
-        :median: 5119777.171583131
-        :mean: 5119777.171583131
+        :min: 5069919.442947763
+        :max: 5069919.442947763
+        :mode: 5069919.442947763
+        :median: 5069919.442947763
+        :mean: 5069919.442947763
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 65643407.36021577
-        :max: 65643407.36021577
-        :mode: 65643407.36021577
-        :median: 65643407.36021577
-        :mean: 65643407.36021577
+        :min: 57085320.516695864
+        :max: 57085320.516695864
+        :mode: 57085320.516695864
+        :median: 57085320.516695864
+        :mean: 57085320.516695864
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 20
@@ -914,18 +1898,18 @@
         :mean: 2.822058823529412
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 5250456.916504857
-        :max: 5250456.916504857
-        :mode: 5250456.916504857
-        :median: 5250456.916504857
-        :mean: 5250456.916504857
+        :min: 5158116.8493891535
+        :max: 5158116.8493891535
+        :mode: 5158116.8493891535
+        :median: 5158116.8493891535
+        :mean: 5158116.8493891535
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 71972917.19974156
-        :max: 71972917.19974156
-        :mode: 71972917.19974156
-        :median: 71972917.19974156
-        :mean: 71972917.19974156
+        :min: 65447533.18540523
+        :max: 65447533.18540523
+        :mode: 65447533.18540523
+        :median: 65447533.18540523
+        :mean: 65447533.18540523
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 21
@@ -942,18 +1926,18 @@
         :mean: 2.822058823529412
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 4997955.524684252
-        :max: 4997955.524684252
-        :mode: 4997955.524684252
-        :median: 4997955.524684252
-        :mean: 4997955.524684252
+        :min: 5261541.666115094
+        :max: 5261541.666115094
+        :mode: 5261541.666115094
+        :median: 5261541.666115094
+        :mean: 5261541.666115094
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 62151523.12994441
-        :max: 62151523.12994441
-        :mode: 62151523.12994441
-        :median: 62151523.12994441
-        :mean: 62151523.12994441
+        :min: 62328138.58929121
+        :max: 62328138.58929121
+        :mode: 62328138.58929121
+        :median: 62328138.58929121
+        :mean: 62328138.58929121
         :standard_deviation: 0.0
   - :type: :zstd
     :compression_level: 22
@@ -970,1000 +1954,16 @@
         :mean: 2.822058823529412
         :standard_deviation: 0.0
       :compress_performance:
-        :min: 5042542.346349172
-        :max: 5042542.346349172
-        :mode: 5042542.346349172
-        :median: 5042542.346349172
-        :mean: 5042542.346349172
+        :min: 4903651.7559578605
+        :max: 4903651.7559578605
+        :mode: 4903651.7559578605
+        :median: 4903651.7559578605
+        :mean: 4903651.7559578605
         :standard_deviation: 0.0
       :decompress_performance:
-        :min: 52247406.23767867
-        :max: 52247406.23767867
-        :mode: 52247406.23767867
-        :median: 52247406.23767867
-        :mean: 52247406.23767867
-        :standard_deviation: 0.0
-- :from_size: 0
-  :to_size: 2047
-  :count: 1
-  :stats:
-  - :type: :brotli
-    :compression_level: 0
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.328883495145631
-        :max: 2.328883495145631
-        :mode: 2.328883495145631
-        :median: 2.328883495145631
-        :mean: 2.328883495145631
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 52119827.663176075
-        :max: 52119827.663176075
-        :mode: 52119827.663176075
-        :median: 52119827.663176075
-        :mean: 52119827.663176075
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 29573273.539259963
-        :max: 29573273.539259963
-        :mode: 29573273.539259963
-        :median: 29573273.539259963
-        :mean: 29573273.539259963
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 1
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.429113924050633
-        :max: 2.429113924050633
-        :mode: 2.429113924050633
-        :median: 2.429113924050633
-        :mean: 2.429113924050633
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 60364885.37628139
-        :max: 60364885.37628139
-        :mode: 60364885.37628139
-        :median: 60364885.37628139
-        :mean: 60364885.37628139
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 49810840.36976175
-        :max: 49810840.36976175
-        :mode: 49810840.36976175
-        :median: 49810840.36976175
-        :mean: 49810840.36976175
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 2
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.55525965379494
-        :max: 2.55525965379494
-        :mode: 2.55525965379494
-        :median: 2.55525965379494
-        :mean: 2.55525965379494
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 40511725.75355718
-        :max: 40511725.75355718
-        :mode: 40511725.75355718
-        :median: 40511725.75355718
-        :mean: 40511725.75355718
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 28696976.58778829
-        :max: 28696976.58778829
-        :mode: 28696976.58778829
-        :median: 28696976.58778829
-        :mean: 28696976.58778829
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 3
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.7142857142857144
-        :max: 2.7142857142857144
-        :mode: 2.7142857142857144
-        :median: 2.7142857142857144
-        :mean: 2.7142857142857144
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 35601649.69313442
-        :max: 35601649.69313442
-        :mode: 35601649.69313442
-        :median: 35601649.69313442
-        :mean: 35601649.69313442
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 53018356.635144256
-        :max: 53018356.635144256
-        :mode: 53018356.635144256
-        :median: 53018356.635144256
-        :mean: 53018356.635144256
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 4
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.9477726574500767
-        :max: 2.9477726574500767
-        :mode: 2.9477726574500767
-        :median: 2.9477726574500767
-        :mean: 2.9477726574500767
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 19374445.37333161
-        :max: 19374445.37333161
-        :mode: 19374445.37333161
-        :median: 19374445.37333161
-        :mean: 19374445.37333161
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 45123721.37945726
-        :max: 45123721.37945726
-        :mode: 45123721.37945726
-        :median: 45123721.37945726
-        :mean: 45123721.37945726
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 5
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 3.285958904109589
-        :max: 3.285958904109589
-        :mode: 3.285958904109589
-        :median: 3.285958904109589
-        :mean: 3.285958904109589
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 19039397.753403004
-        :max: 19039397.753403004
-        :mode: 19039397.753403004
-        :median: 19039397.753403004
-        :mean: 19039397.753403004
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 41812841.58117951
-        :max: 41812841.58117951
-        :mode: 41812841.58117951
-        :median: 41812841.58117951
-        :mean: 41812841.58117951
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 6
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 3.2915951972555746
-        :max: 3.2915951972555746
-        :mode: 3.2915951972555746
-        :median: 3.2915951972555746
-        :mean: 3.2915951972555746
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 21319617.595931523
-        :max: 21319617.595931523
-        :mode: 21319617.595931523
-        :median: 21319617.595931523
-        :mean: 21319617.595931523
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 44797923.480080284
-        :max: 44797923.480080284
-        :mode: 44797923.480080284
-        :median: 44797923.480080284
-        :mean: 44797923.480080284
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 7
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 3.297250859106529
-        :max: 3.297250859106529
-        :mode: 3.297250859106529
-        :median: 3.297250859106529
-        :mean: 3.297250859106529
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 17649871.74843601
-        :max: 17649871.74843601
-        :mode: 17649871.74843601
-        :median: 17649871.74843601
-        :mean: 17649871.74843601
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 42528317.44374571
-        :max: 42528317.44374571
-        :mode: 42528317.44374571
-        :median: 42528317.44374571
-        :mean: 42528317.44374571
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 8
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 3.297250859106529
-        :max: 3.297250859106529
-        :mode: 3.297250859106529
-        :median: 3.297250859106529
-        :mean: 3.297250859106529
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 18480887.81246603
-        :max: 18480887.81246603
-        :mode: 18480887.81246603
-        :median: 18480887.81246603
-        :mean: 18480887.81246603
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 43941108.37397267
-        :max: 43941108.37397267
-        :mode: 43941108.37397267
-        :median: 43941108.37397267
-        :mean: 43941108.37397267
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 9
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 3.3029259896729775
-        :max: 3.3029259896729775
-        :mode: 3.3029259896729775
-        :median: 3.3029259896729775
-        :mean: 3.3029259896729775
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 2165547.604532624
-        :max: 2165547.604532624
-        :mode: 2165547.604532624
-        :median: 2165547.604532624
-        :mean: 2165547.604532624
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 12457652.387023903
-        :max: 12457652.387023903
-        :mode: 12457652.387023903
-        :median: 12457652.387023903
-        :mean: 12457652.387023903
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 10
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 3.560296846011132
-        :max: 3.560296846011132
-        :mode: 3.560296846011132
-        :median: 3.560296846011132
-        :mean: 3.560296846011132
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 1029842.9044784094
-        :max: 1029842.9044784094
-        :mode: 1029842.9044784094
-        :median: 1029842.9044784094
-        :mean: 1029842.9044784094
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 14120299.570309773
-        :max: 14120299.570309773
-        :mode: 14120299.570309773
-        :median: 14120299.570309773
-        :mean: 14120299.570309773
-        :standard_deviation: 0.0
-  - :type: :brotli
-    :compression_level: 11
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 3.580223880597015
-        :max: 3.580223880597015
-        :mode: 3.580223880597015
-        :median: 3.580223880597015
-        :mean: 3.580223880597015
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 637973.9099769494
-        :max: 637973.9099769494
-        :mode: 637973.9099769494
-        :median: 637973.9099769494
-        :mean: 637973.9099769494
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 13841901.69256089
-        :max: 13841901.69256089
-        :mode: 13841901.69256089
-        :median: 13841901.69256089
-        :mean: 13841901.69256089
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 0
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.5967523680649527
-        :max: 2.5967523680649527
-        :mode: 2.5967523680649527
-        :median: 2.5967523680649527
-        :mean: 2.5967523680649527
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 27346699.396129444
-        :max: 27346699.396129444
-        :mode: 27346699.396129444
-        :median: 27346699.396129444
-        :mean: 27346699.396129444
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 37197358.218570955
-        :max: 37197358.218570955
-        :mode: 37197358.218570955
-        :median: 37197358.218570955
-        :mean: 37197358.218570955
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 1
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.5758389261744967
-        :max: 2.5758389261744967
-        :mode: 2.5758389261744967
-        :median: 2.5758389261744967
-        :mean: 2.5758389261744967
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 51144692.04007177
-        :max: 51144692.04007177
-        :mode: 51144692.04007177
-        :median: 51144692.04007177
-        :mean: 51144692.04007177
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 64379559.86894218
-        :max: 64379559.86894218
-        :mode: 64379559.86894218
-        :median: 64379559.86894218
-        :mean: 64379559.86894218
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 2
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.525
-        :max: 2.525
-        :mode: 2.525
-        :median: 2.525
-        :mean: 2.525
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 77954252.7455212
-        :max: 77954252.7455212
-        :mode: 77954252.7455212
-        :median: 77954252.7455212
-        :mean: 77954252.7455212
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 73714871.71000603
-        :max: 73714871.71000603
-        :mode: 73714871.71000603
-        :median: 73714871.71000603
-        :mean: 73714871.71000603
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 3
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.5967523680649527
-        :max: 2.5967523680649527
-        :mode: 2.5967523680649527
-        :median: 2.5967523680649527
-        :mean: 2.5967523680649527
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 68971714.09374356
-        :max: 68971714.09374356
-        :mode: 68971714.09374356
-        :median: 68971714.09374356
-        :mean: 68971714.09374356
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 77236616.60071665
-        :max: 77236616.60071665
-        :mode: 77236616.60071665
-        :median: 77236616.60071665
-        :mean: 77236616.60071665
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 4
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.718130311614731
-        :max: 2.718130311614731
-        :mode: 2.718130311614731
-        :median: 2.718130311614731
-        :mean: 2.718130311614731
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 60098340.09737766
-        :max: 60098340.09737766
-        :mode: 60098340.09737766
-        :median: 60098340.09737766
-        :mean: 60098340.09737766
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 75282547.36875622
-        :max: 75282547.36875622
-        :mode: 75282547.36875622
-        :median: 75282547.36875622
-        :mean: 75282547.36875622
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 5
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.7611510791366904
-        :max: 2.7611510791366904
-        :mode: 2.7611510791366904
-        :median: 2.7611510791366904
-        :mean: 2.7611510791366904
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 35754208.39028369
-        :max: 35754208.39028369
-        :mode: 35754208.39028369
-        :median: 35754208.39028369
-        :mean: 35754208.39028369
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 77853736.36769235
-        :max: 77853736.36769235
-        :mode: 77853736.36769235
-        :median: 77853736.36769235
-        :mean: 77853736.36769235
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 6
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.7892441860465116
-        :max: 2.7892441860465116
-        :mode: 2.7892441860465116
-        :median: 2.7892441860465116
-        :mean: 2.7892441860465116
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 41041109.010649554
-        :max: 41041109.010649554
-        :mode: 41041109.010649554
-        :median: 41041109.010649554
-        :mean: 41041109.010649554
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 84469020.21433574
-        :max: 84469020.21433574
-        :mode: 84469020.21433574
-        :median: 84469020.21433574
-        :mean: 84469020.21433574
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 7
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.7933042212518195
-        :max: 2.7933042212518195
-        :mode: 2.7933042212518195
-        :median: 2.7933042212518195
-        :mean: 2.7933042212518195
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 36812523.83613051
-        :max: 36812523.83613051
-        :mode: 36812523.83613051
-        :median: 36812523.83613051
-        :mean: 36812523.83613051
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 58353853.287631124
-        :max: 58353853.287631124
-        :mode: 58353853.287631124
-        :median: 58353853.287631124
-        :mean: 58353853.287631124
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 8
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.7933042212518195
-        :max: 2.7933042212518195
-        :mode: 2.7933042212518195
-        :median: 2.7933042212518195
-        :mean: 2.7933042212518195
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 28737439.525039714
-        :max: 28737439.525039714
-        :mode: 28737439.525039714
-        :median: 28737439.525039714
-        :mean: 28737439.525039714
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 33744285.8187869
-        :max: 33744285.8187869
-        :mode: 33744285.8187869
-        :median: 33744285.8187869
-        :mean: 33744285.8187869
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 9
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.7933042212518195
-        :max: 2.7933042212518195
-        :mode: 2.7933042212518195
-        :median: 2.7933042212518195
-        :mean: 2.7933042212518195
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 10949946.57838002
-        :max: 10949946.57838002
-        :mode: 10949946.57838002
-        :median: 10949946.57838002
-        :mean: 10949946.57838002
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 32856665.487679172
-        :max: 32856665.487679172
-        :mode: 32856665.487679172
-        :median: 32856665.487679172
-        :mean: 32856665.487679172
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 10
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.7933042212518195
-        :max: 2.7933042212518195
-        :mode: 2.7933042212518195
-        :median: 2.7933042212518195
-        :mean: 2.7933042212518195
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 14919455.115082813
-        :max: 14919455.115082813
-        :mode: 14919455.115082813
-        :median: 14919455.115082813
-        :mean: 14919455.115082813
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 33014563.117428977
-        :max: 33014563.117428977
-        :mode: 33014563.117428977
-        :median: 33014563.117428977
-        :mean: 33014563.117428977
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 11
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.781159420289855
-        :max: 2.781159420289855
-        :mode: 2.781159420289855
-        :median: 2.781159420289855
-        :mean: 2.781159420289855
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 9845114.919535829
-        :max: 9845114.919535829
-        :mode: 9845114.919535829
-        :median: 9845114.919535829
-        :mean: 9845114.919535829
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 41661652.408214696
-        :max: 41661652.408214696
-        :mode: 41661652.408214696
-        :median: 41661652.408214696
-        :mean: 41661652.408214696
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 12
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.8014598540145985
-        :max: 2.8014598540145985
-        :mode: 2.8014598540145985
-        :median: 2.8014598540145985
-        :mean: 2.8014598540145985
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 8404060.44557785
-        :max: 8404060.44557785
-        :mode: 8404060.44557785
-        :median: 8404060.44557785
-        :mean: 8404060.44557785
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 35079639.13760121
-        :max: 35079639.13760121
-        :mode: 35079639.13760121
-        :median: 35079639.13760121
-        :mean: 35079639.13760121
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 13
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.813782991202346
-        :max: 2.813782991202346
-        :mode: 2.813782991202346
-        :median: 2.813782991202346
-        :mean: 2.813782991202346
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 7542290.2369264
-        :max: 7542290.2369264
-        :mode: 7542290.2369264
-        :median: 7542290.2369264
-        :mean: 7542290.2369264
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 32647196.638188846
-        :max: 32647196.638188846
-        :mode: 32647196.638188846
-        :median: 32647196.638188846
-        :mean: 32647196.638188846
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 14
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.813782991202346
-        :max: 2.813782991202346
-        :mode: 2.813782991202346
-        :median: 2.813782991202346
-        :mean: 2.813782991202346
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 8256604.310839473
-        :max: 8256604.310839473
-        :mode: 8256604.310839473
-        :median: 8256604.310839473
-        :mean: 8256604.310839473
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 45716590.85774374
-        :max: 45716590.85774374
-        :mode: 45716590.85774374
-        :median: 45716590.85774374
-        :mean: 45716590.85774374
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 15
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.813782991202346
-        :max: 2.813782991202346
-        :mode: 2.813782991202346
-        :median: 2.813782991202346
-        :mean: 2.813782991202346
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 8646052.553019201
-        :max: 8646052.553019201
-        :mode: 8646052.553019201
-        :median: 8646052.553019201
-        :mean: 8646052.553019201
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 60402098.86559485
-        :max: 60402098.86559485
-        :mode: 60402098.86559485
-        :median: 60402098.86559485
-        :mean: 60402098.86559485
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 16
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.822058823529412
-        :max: 2.822058823529412
-        :mode: 2.822058823529412
-        :median: 2.822058823529412
-        :mean: 2.822058823529412
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 4570505.79941588
-        :max: 4570505.79941588
-        :mode: 4570505.79941588
-        :median: 4570505.79941588
-        :mean: 4570505.79941588
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 61366304.42996242
-        :max: 61366304.42996242
-        :mode: 61366304.42996242
-        :median: 61366304.42996242
-        :mean: 61366304.42996242
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 17
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.822058823529412
-        :max: 2.822058823529412
-        :mode: 2.822058823529412
-        :median: 2.822058823529412
-        :mean: 2.822058823529412
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 4644206.4315225445
-        :max: 4644206.4315225445
-        :mode: 4644206.4315225445
-        :median: 4644206.4315225445
-        :mean: 4644206.4315225445
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 65134084.82967363
-        :max: 65134084.82967363
-        :mode: 65134084.82967363
-        :median: 65134084.82967363
-        :mean: 65134084.82967363
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 18
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.822058823529412
-        :max: 2.822058823529412
-        :mode: 2.822058823529412
-        :median: 2.822058823529412
-        :mean: 2.822058823529412
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 4686706.274983348
-        :max: 4686706.274983348
-        :mode: 4686706.274983348
-        :median: 4686706.274983348
-        :mean: 4686706.274983348
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 56652495.248145096
-        :max: 56652495.248145096
-        :mode: 56652495.248145096
-        :median: 56652495.248145096
-        :mean: 56652495.248145096
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 19
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.822058823529412
-        :max: 2.822058823529412
-        :mode: 2.822058823529412
-        :median: 2.822058823529412
-        :mean: 2.822058823529412
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 4703857.929051268
-        :max: 4703857.929051268
-        :mode: 4703857.929051268
-        :median: 4703857.929051268
-        :mean: 4703857.929051268
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 46076705.871921845
-        :max: 46076705.871921845
-        :mode: 46076705.871921845
-        :median: 46076705.871921845
-        :mean: 46076705.871921845
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 20
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.822058823529412
-        :max: 2.822058823529412
-        :mode: 2.822058823529412
-        :median: 2.822058823529412
-        :mean: 2.822058823529412
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 4596616.351686753
-        :max: 4596616.351686753
-        :mode: 4596616.351686753
-        :median: 4596616.351686753
-        :mean: 4596616.351686753
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 41057842.30693804
-        :max: 41057842.30693804
-        :mode: 41057842.30693804
-        :median: 41057842.30693804
-        :mean: 41057842.30693804
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 21
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.822058823529412
-        :max: 2.822058823529412
-        :mode: 2.822058823529412
-        :median: 2.822058823529412
-        :mean: 2.822058823529412
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 5189993.24340049
-        :max: 5189993.24340049
-        :mode: 5189993.24340049
-        :median: 5189993.24340049
-        :mean: 5189993.24340049
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 56562971.268959284
-        :max: 56562971.268959284
-        :mode: 56562971.268959284
-        :median: 56562971.268959284
-        :mean: 56562971.268959284
-        :standard_deviation: 0.0
-  - :type: :zstd
-    :compression_level: 22
-    :total:
-      :ratio: 0
-      :compress_performance: 0.0
-      :decompress_performance: 0
-    :single:
-      :ratio:
-        :min: 2.822058823529412
-        :max: 2.822058823529412
-        :mode: 2.822058823529412
-        :median: 2.822058823529412
-        :mean: 2.822058823529412
-        :standard_deviation: 0.0
-      :compress_performance:
-        :min: 4676529.88368149
-        :max: 4676529.88368149
-        :mode: 4676529.88368149
-        :median: 4676529.88368149
-        :mean: 4676529.88368149
-        :standard_deviation: 0.0
-      :decompress_performance:
-        :min: 64150939.292406306
-        :max: 64150939.292406306
-        :mode: 64150939.292406306
-        :median: 64150939.292406306
-        :mean: 64150939.292406306
+        :min: 48512540.9287504
+        :max: 48512540.9287504
+        :mode: 48512540.9287504
+        :median: 48512540.9287504
+        :mean: 48512540.9287504
         :standard_deviation: 0.0
