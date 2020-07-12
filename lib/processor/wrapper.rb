@@ -113,24 +113,40 @@ class Processor
     new_total_result = get_last_total_result
     @total_result    = self.class.sum_results @total_result, new_total_result
 
+    raise StandardError, "total content is not empty" unless @total_content.empty?
+
     nil
   end
 
   protected def get_last_total_result
-    is_compressor_flushed = false
-
-    compress_time = 0
+    total_content_size            = 0
+    total_compressed_content_size = 0
+    total_compress_time           = 0
+    total_decompress_time         = 0
 
     loop do
-      unless is_compressor_flushed
-        is_compressor_flushed, new_compress_time = flush_compressor_nonblock @compressor, @compressor_write_io
-        compress_time += new_compress_time
+      is_compressor_flushed, compress_time = self.class.flush_nonblock @compressor, @compressor_write_io
+      total_compress_time += compress_time
+
+      loop do
+        compressed_content_size = self.class.mirror_content @compressor_read_io, @decompressor_write_io
+        total_compressed_content_size += compressed_content_size
+
+        decompressed_content, is_decompressor_finished, decompress_time = self.class.read_nonblock @decompressor, @decompressor_read_io
+        total_decompress_time += decompress_time
+
+        break if is_decompressor_finished
       end
 
       break if is_compressor_flushed
     end
 
-    self.class.get_result 0, 0, compress_time, 0
+    self.class.get_result(
+      total_content_size,
+      total_compressed_content_size,
+      total_compress_time,
+      total_decompress_time
+    )
   end
 
   protected def close_compressor
@@ -150,7 +166,7 @@ class Processor
   end
 
   def get_stats
-    stats = get_stats_from_result_data @total_result, @single_results
+    stats = get_stats_from_results @total_result, @single_results
 
     {
       :type              => @type,
@@ -172,20 +188,5 @@ class Processor
 
   protected def raise_invalid_processor_type
     raise StandardError, "invalid processor, type: #{@type}"
-  end
-
-  def self.sum_results(result_1, result_2)
-    result_1.keys.each_with_object({}) do |key, result|
-      result[key] = result_1[key] + result_2[key]
-    end
-  end
-
-  def self.get_result(content_size = 0, compressed_content_size = 0, compress_time = 0, decompress_time = 0)
-    {
-      :content_size            => content_size,
-      :compressed_content_size => compressed_content_size,
-      :compress_time           => compress_time,
-      :decompress_time         => decompress_time
-    }
   end
 end
