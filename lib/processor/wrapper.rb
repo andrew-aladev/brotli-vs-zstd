@@ -10,9 +10,9 @@ class Processor
     @type              = type
     @compression_level = compression_level
 
-    @total_content  = String.new :encoding => Encoding::BINARY
-    @total_result   = self.class.get_result
-    @single_results = []
+    @remaining_content = String.new :encoding => Encoding::BINARY
+    @total_result      = self.class.get_result
+    @single_results    = []
 
     init_compressor
     init_decompressor
@@ -53,11 +53,11 @@ class Processor
   end
 
   def process(content)
-    new_total_result = get_total_result content
-    @total_result    = self.class.sum_results @total_result, new_total_result
+    total_result  = get_total_result content
+    @total_result = self.class.sum_results @total_result, total_result
 
-    new_single_result = get_single_result content
-    @single_results << new_single_result
+    single_result = get_single_result content
+    @single_results << single_result
 
     nil
   end
@@ -110,10 +110,10 @@ class Processor
   end
 
   protected def flush
-    new_total_result = get_last_total_result
-    @total_result    = self.class.sum_results @total_result, new_total_result
+    total_result  = get_last_total_result
+    @total_result = self.class.sum_results @total_result, total_result
 
-    raise StandardError, "total content is not empty" unless @total_content.empty?
+    raise StandardError, "remaining content is not empty" unless @remaining_content.empty?
 
     nil
   end
@@ -128,15 +128,15 @@ class Processor
       is_compressor_flushed, compress_time = self.class.flush_nonblock @compressor, @compressor_write_io
       total_compress_time += compress_time
 
-      loop do
-        compressed_content_size = self.class.mirror_content @compressor_read_io, @decompressor_write_io
-        total_compressed_content_size += compressed_content_size
-
-        decompressed_content, is_decompressor_finished, decompress_time = self.class.read_nonblock @decompressor, @decompressor_read_io
-        total_decompress_time += decompress_time
-
-        break if is_decompressor_finished
-      end
+      # loop do
+      #   compressed_content_size = self.class.mirror_content @compressor_read_io, @decompressor_write_io
+      #   total_compressed_content_size += compressed_content_size
+      #
+      #   decompressed_content, is_decompressor_finished, decompress_time = self.class.read_nonblock @decompressor, @decompressor_read_io
+      #   total_decompress_time += decompress_time
+      #
+      #   break if is_decompressor_finished
+      # end
 
       break if is_compressor_flushed
     end
