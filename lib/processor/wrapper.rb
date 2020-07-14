@@ -124,21 +124,17 @@ class Processor
     total_compress_time           = 0
     total_decompress_time         = 0
 
-    loop do
-      is_compressor_flushed, compress_time = self.class.flush_nonblock @compressor, @compressor_write_io
-      total_compress_time += compress_time
-
-      # loop do
-      #   compressed_content_size = self.class.mirror_content @compressor_read_io, @decompressor_write_io
-      #   total_compressed_content_size += compressed_content_size
-      #
-      #   decompressed_content, is_decompressor_finished, decompress_time = self.class.read_nonblock @decompressor, @decompressor_read_io
-      #   total_decompress_time += decompress_time
-      #
-      #   break if is_decompressor_finished
-      # end
-
-      break if is_compressor_flushed
+    self.class.flush @compressor, @compressor_write_io do |compress_time|
+      self.class.read @compressor_read_io do |compressed_content|
+        self.class.write @decompressor_write_io, @decompressor_write_io, compressed_content do
+          self.class.read @decompressor do |decompressed_content, decompress_time|
+            total_content_size            += decompressed_content.bytesize
+            total_compressed_content_size += compressed_content.bytesize
+            total_compress_time           += compress_time
+            total_decompress_time         += decompress_time
+          end
+        end
+      end
     end
 
     self.class.get_result(
