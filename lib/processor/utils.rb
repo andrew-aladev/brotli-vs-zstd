@@ -7,13 +7,16 @@ class Processor
   MAX_PORTION_LENGTH = 1 << 18 # 256 KB
 
   def self.write(processor, write_io, content, &_block)
+    return nil if content.bytesize.zero?
+
     loop do
+      wait_writable write_io
+
       begin
         bytes_written, time = with_time { processor.write_nonblock content }
       rescue IO::WaitWritable
         yield 0
-        IO.select nil, [write_io]
-        retry
+        next
       end
 
       yield time
@@ -27,12 +30,13 @@ class Processor
 
   def self.flush(processor, write_io, &_block)
     loop do
+      wait_writable write_io
+
       begin
         is_flushed, time = with_time { processor.flush_nonblock }
       rescue IO::WaitWritable
         yield 0
-        IO.select nil, [write_io]
-        retry
+        next
       end
 
       yield time
@@ -43,18 +47,40 @@ class Processor
     nil
   end
 
-  def self.read(processor, &_block)
+  def self.read(processor, read_io, &_block)
     loop do
+      break unless wait_readable read_io
+
       begin
         content, time = with_time { processor.read_nonblock MAX_PORTION_LENGTH }
       rescue IO::WaitReadable
-        break
+        next
       end
 
       yield content, time
     end
 
     nil
+  end
+
+  def self.wait_writable(io)
+    result = IO.select nil, [io]
+    return false if result.nil?
+
+    ios = result[1]
+    return false if ios.nil? || !ios.include?(io)
+
+    true
+  end
+
+  def self.wait_readable(io)
+    result = IO.select [io], nil, nil, 0
+    return false if result.nil?
+
+    ios = result[0]
+    return false if ios.nil? || !ios.include?(io)
+
+    true
   end
 
   def self.sum_results(result_1, result_2)

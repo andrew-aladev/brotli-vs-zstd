@@ -62,8 +62,31 @@ class Processor
     nil
   end
 
-  protected def get_total_result(_content)
-    self.class.get_result
+  protected def get_total_result(content)
+    total_content_size            = 0
+    total_compressed_content_size = 0
+    total_compress_time           = 0
+    total_decompress_time         = 0
+
+    self.class.write @compressor, @compressor_write_io, content do |compress_time|
+      self.class.read @compressor_read_io, @compressor_read_io do |compressed_content|
+        self.class.write @decompressor_write_io, @decompressor_write_io, compressed_content do
+          self.class.read @decompressor, @decompressor_read_io do |decompressed_content, decompress_time|
+            total_content_size            += decompressed_content.bytesize
+            total_compressed_content_size += compressed_content.bytesize
+            total_compress_time           += compress_time
+            total_decompress_time         += decompress_time
+          end
+        end
+      end
+    end
+
+    self.class.get_result(
+      total_content_size,
+      total_compressed_content_size,
+      total_compress_time,
+      total_decompress_time
+    )
   end
 
   protected def get_single_result(content)
@@ -125,9 +148,9 @@ class Processor
     total_decompress_time         = 0
 
     self.class.flush @compressor, @compressor_write_io do |compress_time|
-      self.class.read @compressor_read_io do |compressed_content|
+      self.class.read @compressor_read_io, @compressor_read_io do |compressed_content|
         self.class.write @decompressor_write_io, @decompressor_write_io, compressed_content do
-          self.class.read @decompressor do |decompressed_content, decompress_time|
+          self.class.read @decompressor, @decompressor_read_io do |decompressed_content, decompress_time|
             total_content_size            += decompressed_content.bytesize
             total_compressed_content_size += compressed_content.bytesize
             total_compress_time           += compress_time
