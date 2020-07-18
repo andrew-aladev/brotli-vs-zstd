@@ -20,7 +20,7 @@ def process_files(vendor, root_path, option_groups)
     end
 
     pathes_length_text = colorize_length pathes.length
-    warn "- processing #{pathes_length_text} files"
+    warn "-- processing #{pathes_length_text} files"
 
     stats = get_processor_stats pathes
     data << {
@@ -46,7 +46,7 @@ def process_files(vendor, root_path, option_groups)
 
       group_pathes_length_text = colorize_length group_pathes.length
 
-      warn "- processing group with #{group_pathes_length_text} files, " \
+      warn "-- processing group with #{group_pathes_length_text} files, " \
         "from size: #{from_size_text}, " \
         "to size: #{to_size_text}"
 

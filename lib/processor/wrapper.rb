@@ -10,46 +10,42 @@ class Processor
     @type              = type
     @compression_level = compression_level
 
-    @remaining_content = String.new :encoding => Encoding::BINARY
-    @total_result      = self.class.get_result
-    @single_results    = []
+    @total_remaining_content = String.new :encoding => Encoding::BINARY
+    @total_result            = self.class.get_result
+
+    @single_results = []
 
     init_compressor
     init_decompressor
   end
 
   protected def init_compressor
-    @compressor_read_io, @compressor_write_io = IO.pipe
-
-    compression_options = get_compression_options
+    @compressor_read_io, compressor_write_io = IO.pipe
+    compression_options                      = get_compression_options
 
     @compressor =
       case @type
       when :brotli
-        BRS::Stream::Writer.new @compressor_write_io, compression_options
+        BRS::Stream::Writer.new compressor_write_io, compression_options
       when :zstd
-        ZSTDS::Stream::Writer.new @compressor_write_io, compression_options
+        ZSTDS::Stream::Writer.new compressor_write_io, compression_options
       else
         raise_invalid_processor_type
       end
-
-    nil
   end
 
   protected def init_decompressor
-    @decompressor_read_io, @decompressor_write_io = IO.pipe
+    decompressor_read_io, @decompressor_write_io = IO.pipe
 
     @decompressor =
       case @type
       when :brotli
-        BRS::Stream::Reader.new @decompressor_read_io
+        BRS::Stream::Reader.new decompressor_read_io
       when :zstd
-        ZSTDS::Stream::Reader.new @decompressor_read_io
+        ZSTDS::Stream::Reader.new decompressor_read_io
       else
         raise_invalid_processor_type
       end
-
-    nil
   end
 
   def process(content)
@@ -63,26 +59,22 @@ class Processor
   end
 
   protected def get_total_result(content)
-    total_content_size            = 0
+    @total_remaining_content << content
+
     total_compressed_content_size = 0
-    total_compress_time           = 0
     total_decompress_time         = 0
 
-    self.class.write @compressor, @compressor_write_io, content do |compress_time|
-      self.class.read @compressor_read_io, @compressor_read_io do |compressed_content|
-        self.class.write @decompressor_write_io, @decompressor_write_io, compressed_content do
-          self.class.read @decompressor, @decompressor_read_io do |decompressed_content, decompress_time|
-            total_content_size            += decompressed_content.bytesize
-            total_compressed_content_size += compressed_content.bytesize
-            total_compress_time           += compress_time
-            total_decompress_time         += decompress_time
-          end
-        end
+    total_compress_time = self.class.write_and_read @compressor, @compressor_read_io, content do |compressed_content, _read_time|
+      total_compressed_content_size += compressed_content.bytesize
+
+      self.class.write_and_read @decompressor_write_io, @decompressor, compressed_content do |decompressed_content, decompress_time|
+        process_total_decompressed_content decompressed_content
+        total_decompress_time += decompress_time
       end
     end
 
     self.class.get_result(
-      total_content_size,
+      content.bytesize,
       total_compressed_content_size,
       total_compress_time,
       total_decompress_time
@@ -112,7 +104,7 @@ class Processor
         raise_invalid_processor_type
       end
 
-    raise StandardError, "original content is not equal to decompressed content" \
+    raise StandardError, "received invalid decompressed content" \
       unless content == decompressed_content
 
     self.class.get_result(
@@ -126,8 +118,10 @@ class Processor
   def close
     flush
 
-    close_compressor
-    close_decompressor
+    @compressor.close
+    @compressor_read_io.close
+    @decompressor_write_io.close
+    @decompressor.close
 
     nil
   end
@@ -136,52 +130,44 @@ class Processor
     total_result  = get_last_total_result
     @total_result = self.class.sum_results @total_result, total_result
 
-    raise StandardError, "remaining content is not empty" unless @remaining_content.empty?
-
-    nil
+    raise StandardError, "remaining content is not empty" \
+      unless @total_remaining_content.empty?
   end
 
   protected def get_last_total_result
-    total_content_size            = 0
     total_compressed_content_size = 0
-    total_compress_time           = 0
     total_decompress_time         = 0
 
-    self.class.flush @compressor, @compressor_write_io do |compress_time|
-      self.class.read @compressor_read_io, @compressor_read_io do |compressed_content|
-        self.class.write @decompressor_write_io, @decompressor_write_io, compressed_content do
-          self.class.read @decompressor, @decompressor_read_io do |decompressed_content, decompress_time|
-            total_content_size            += decompressed_content.bytesize
-            total_compressed_content_size += compressed_content.bytesize
-            total_compress_time           += compress_time
-            total_decompress_time         += decompress_time
-          end
-        end
+    total_compress_time = self.class.flush_and_read @compressor, @compressor_read_io do |compressed_content, _read_time|
+      total_compressed_content_size += compressed_content.bytesize
+
+      self.class.write_and_read @decompressor_write_io, @decompressor, compressed_content do |decompressed_content, decompress_time|
+        process_total_decompressed_content decompressed_content
+        total_decompress_time += decompress_time
       end
     end
 
+    self.class.flush_and_read @decompressor_write_io, @decompressor do |decompressed_content, decompress_time|
+      process_total_decompressed_content decompressed_content
+      total_decompress_time += decompress_time
+    end
+
     self.class.get_result(
-      total_content_size,
+      0,
       total_compressed_content_size,
       total_compress_time,
       total_decompress_time
     )
   end
 
-  protected def close_compressor
-    @compressor.close
-    @compressor_write_io.close
-    @compressor_read_io.close
+  protected def process_total_decompressed_content(decompressed_content)
+    raise StandardError, "received invalid decompressed content" \
+      unless @total_remaining_content.start_with? decompressed_content
 
-    nil
-  end
-
-  protected def close_decompressor
-    @decompressor.close
-    @decompressor_write_io.close
-    @decompressor_read_io.close
-
-    nil
+    @total_remaining_content = @total_remaining_content.byteslice(
+      decompressed_content.bytesize,
+      @total_remaining_content.bytesize - decompressed_content.bytesize
+    )
   end
 
   def get_stats

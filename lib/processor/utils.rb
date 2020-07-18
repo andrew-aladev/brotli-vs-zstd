@@ -1,86 +1,101 @@
-require "brs"
-require "zstds"
-
 require_relative "../common/time"
 
 class Processor
-  MAX_PORTION_LENGTH = 1 << 18 # 256 KB
+  # 256 KB is enough for both compressor and decompressor.
+  MAX_PORTION_LENGTH = 1 << 18
 
-  def self.write(processor, write_io, content, &_block)
-    return nil if content.bytesize.zero?
+  def self.write_and_read(writer, reader, content, &_read_block)
+    return 0 if content.bytesize.zero?
+
+    total_writing_time = 0
+    modes              = %i[write]
+    read_io            = get_io reader
+    write_io           = get_io writer
 
     loop do
-      wait_writable write_io
+      yield with_time { reader.read_nonblock MAX_PORTION_LENGTH } if modes.include? :read
 
-      begin
-        bytes_written, time = with_time { processor.write_nonblock content }
-      rescue IO::WaitWritable
-        yield 0
-        next
+      if modes.include? :write
+        bytes_written, writing_time = with_time { writer.write_nonblock content }
+
+        content             = content.byteslice bytes_written, content.bytesize - bytes_written
+        total_writing_time += writing_time
+
+        break if content.bytesize.zero?
       end
 
-      yield time
+    rescue IO::WaitWritable, IO::WaitReadable
+      modes = wait read_io, write_io
+      raise StandardError, "IO is not writable or readable" if modes.empty?
 
-      content = content.byteslice bytes_written, content.bytesize - bytes_written
-      break if content.bytesize.zero?
+      next
     end
 
-    nil
+    total_writing_time
   end
 
-  def self.flush(processor, write_io, &_block)
+  def self.flush_and_read(writer, reader, &_read_block)
+    total_flushing_time = 0
+    modes               = %i[write]
+    read_io             = get_io reader
+    write_io            = get_io writer
+
     loop do
-      wait_writable write_io
-
-      begin
-        is_flushed, time = with_time { processor.flush_nonblock }
-      rescue IO::WaitWritable
-        yield 0
-        next
+      if modes.include? :read
+        begin
+          yield with_time { reader.read_nonblock MAX_PORTION_LENGTH }
+        rescue EOFError
+          break
+        end
       end
 
-      yield time
+      if modes.include? :write
+        if writer.respond_to? :flush_nonblock
+          is_flushed, flushing_time = with_time { writer.flush_nonblock }
+        else
+          _io, flushing_time = with_time { writer.flush }
+          is_flushed = true
+        end
 
-      break if is_flushed
-    end
+        total_flushing_time += flushing_time
 
-    nil
-  end
+        if is_flushed
+          writer.close
 
-  def self.read(processor, read_io, &_block)
-    loop do
-      break unless wait_readable read_io
-
-      begin
-        content, time = with_time { processor.read_nonblock MAX_PORTION_LENGTH }
-      rescue IO::WaitReadable
-        next
+          # We need to read remaining data.
+          modes = [:read]
+        end
       end
 
-      yield content, time
+    rescue IO::WaitWritable, IO::WaitReadable
+      modes = wait read_io, write_io
+      raise StandardError, "IO is not writable or readable" if modes.empty?
+
+      next
     end
 
-    nil
+    total_flushing_time
   end
 
-  def self.wait_writable(io)
-    result = IO.select nil, [io]
-    return false if result.nil?
+  def self.get_io(processor)
+    return processor.io if processor.respond_to? :io
 
-    ios = result[1]
-    return false if ios.nil? || !ios.include?(io)
-
-    true
+    processor
   end
 
-  def self.wait_readable(io)
-    result = IO.select [io], nil, nil, 0
-    return false if result.nil?
+  def self.wait(read_io, write_io)
+    result = IO.select [read_io], [write_io]
+    return [] if result.nil?
 
-    ios = result[0]
-    return false if ios.nil? || !ios.include?(io)
+    modes = []
 
-    true
+    read_ios = result[0]
+    modes << :read if read_ios.include? read_io
+
+    write_ios = result[1]
+    modes << :write if write_ios.include? write_io
+
+    modes
   end
 
   def self.sum_results(result_1, result_2)

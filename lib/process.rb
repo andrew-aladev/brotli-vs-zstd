@@ -12,7 +12,7 @@ raise StandardError, "at least one param is required" if params.empty?
 
 option_groups = params.flat_map do |param|
   data = param.split ":"
-  raise StandardError, "invalid param format, required format: 'extension:types'" if data.length != 2
+  raise StandardError, "invalid param format, required format: 'extension:types'" unless data.length == 2
 
   extension = data[0]
   raise StandardError, "extension is required" if extension.nil? || extension.empty?

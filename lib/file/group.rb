@@ -15,7 +15,7 @@ def group_file_pathes_by_size_histogram(pathes, start_size: DEFAULT_HISTOGRAM_ST
   end
 
   start_size_text = format_filesize start_size
-  warn "- grouping file pathes by histogram, start size: #{start_size_text}, size multiplier: #{size_multiplier}"
+  warn "grouping file pathes by histogram, start size: #{start_size_text}, size multiplier: #{size_multiplier}"
 
   groups    = []
   from_size = 0
