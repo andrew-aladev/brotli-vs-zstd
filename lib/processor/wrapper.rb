@@ -116,7 +116,11 @@ class Processor
   end
 
   def close
-    flush
+    total_result  = get_last_total_result
+    @total_result = self.class.sum_results @total_result, total_result
+
+    raise StandardError, "remaining content is not empty" \
+      unless @total_remaining_content.empty?
 
     @compressor.close
     @compressor_read_io.close
@@ -126,19 +130,11 @@ class Processor
     nil
   end
 
-  protected def flush
-    total_result  = get_last_total_result
-    @total_result = self.class.sum_results @total_result, total_result
-
-    raise StandardError, "remaining content is not empty" \
-      unless @total_remaining_content.empty?
-  end
-
   protected def get_last_total_result
     total_compressed_content_size = 0
     total_decompress_time         = 0
 
-    total_compress_time = self.class.flush_and_read @compressor, @compressor_read_io do |compressed_content, _read_time|
+    total_compress_time = self.class.close_and_read @compressor, @compressor_read_io do |compressed_content, _read_time|
       total_compressed_content_size += compressed_content.bytesize
 
       self.class.write_and_read @decompressor_write_io, @decompressor, compressed_content do |decompressed_content, decompress_time|
@@ -147,7 +143,7 @@ class Processor
       end
     end
 
-    self.class.flush_and_read @decompressor_write_io, @decompressor do |decompressed_content, decompress_time|
+    self.class.close_and_read @decompressor_write_io, @decompressor do |decompressed_content, decompress_time|
       process_total_decompressed_content decompressed_content
       total_decompress_time += decompress_time
     end

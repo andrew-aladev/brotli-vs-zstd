@@ -34,11 +34,12 @@ class Processor
     total_writing_time
   end
 
-  def self.flush_and_read(writer, reader, &_read_block)
-    total_flushing_time = 0
-    modes               = %i[write]
-    read_io             = get_io reader
-    write_io            = get_io writer
+  def self.close_and_read(writer, reader, &_read_block)
+    total_is_flushed   = false
+    total_closing_time = 0
+    modes              = %i[write]
+    read_io            = get_io reader
+    write_io           = get_io writer
 
     loop do
       if modes.include? :read
@@ -50,20 +51,29 @@ class Processor
       end
 
       if modes.include? :write
-        if writer.respond_to? :flush_nonblock
-          is_flushed, flushing_time = with_time { writer.flush_nonblock }
+        if total_is_flushed
+          if writer.respond_to? :close_nonblock
+            is_closed, closing_time = with_time { writer.close_nonblock }
+          else
+            _result, closing_time = with_time { writer.close }
+            is_closed = true
+          end
+
+          total_closing_time += closing_time
+
+          # We may need to read remaining data.
+          modes = [:read] if is_closed
         else
-          _io, flushing_time = with_time { writer.flush }
-          is_flushed = true
-        end
+          if writer.respond_to? :flush_nonblock
+            is_flushed, flushing_time = with_time { writer.flush_nonblock }
+          else
+            _result, flushing_time = with_time { writer.flush }
+            is_flushed = true
+          end
 
-        total_flushing_time += flushing_time
+          total_closing_time += flushing_time
 
-        if is_flushed
-          writer.close
-
-          # We need to read remaining data.
-          modes = [:read]
+          total_is_flushed = true if is_flushed
         end
       end
 
@@ -74,7 +84,7 @@ class Processor
       next
     end
 
-    total_flushing_time
+    total_closing_time
   end
 
   def self.get_io(processor)
