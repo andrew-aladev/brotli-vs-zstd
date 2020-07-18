@@ -38,5 +38,5 @@ def find_file_pathes(root_path, extension, type)
   pathes_text = colorize_length pathes.length
   warn "found #{pathes_text} file pathes"
 
-  pathes
+  pathes.sort
 end
