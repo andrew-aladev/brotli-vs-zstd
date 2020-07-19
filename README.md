@@ -1,7 +1,7 @@
 # Comparison of brotli and zstd
 
 Please disable any performance boosts for your CPU and force base clock.
-Tests will be executed in single thread mode and will provide more accurate and reproducible results.
+Tests will be executed in single threaded mode and will provide accurate and reproducible results.
 
 ## Installation
 
@@ -35,7 +35,7 @@ rm wikipedia-en-html.tar.7z
 We are creating compressors and decompressors for each param combination.
 All compressors and decompressors are sitting inside RAM together.
 Each file passes through all processors.
-Benchmark requires about `4 GB` of free RAM.
+Benchmark requires about `6 GB` of free RAM.
 
 ## Benchmark
 
@@ -47,7 +47,7 @@ Please run prepared process scripts.
 ./scripts/data/process_wikipedia.sh /mnt/hdd1/wikipedia
 ```
 
-This benchmark will take about 1 week on modern machine.
+This benchmark will take about `2 weeks` on modern machine.
 It will populate results and update [data folder](data).
 
 You can add your own script, please look at [scripts/data folder](scripts/data).
