@@ -18,7 +18,7 @@ bundle install
 Please download recent versions of [google fonts](https://github.com/google/fonts),
 [cdnjs](https://github.com/cdnjs/cdnjs) and
 [static HTML dump of wikipedia](https://dumps.wikimedia.org/other/static_html_dumps/current/en/).
-You can use any large HDD, for example `/mnt/hdd1`.
+You can use any large HDD `1 TB +`, for example `/mnt/hdd1`.
 
 ```sh
 cd /mnt/hdd1
@@ -27,6 +27,7 @@ git clone git@github.com:cdnjs/cdnjs.git --depth=1
 mkdir wikipedia
 wget "https://dumps.wikimedia.org/other/static_html_dumps/current/en/wikipedia-en-html.tar.7z"
 7z x -so wikipedia-en-html.tar.7z | tar xf - -C wikipedia
+rm wikipedia-en-html.tar.7z
 ```
 
 ## RAM usage
@@ -34,7 +35,7 @@ wget "https://dumps.wikimedia.org/other/static_html_dumps/current/en/wikipedia-e
 We are creating compressors and decompressors for each param combination.
 All compressors and decompressors are sitting inside RAM together.
 Each file passes through all processors.
-Benchmark requires about 4 GB of free RAM.
+Benchmark requires about `4 GB` of free RAM.
 
 ## Benchmark
 
@@ -46,7 +47,8 @@ Please run prepared process scripts.
 ./scripts/data/process_wikipedia.sh /mnt/hdd1/wikipedia
 ```
 
-It will update [data folder](data) with benchmark results.
+This benchmark will take about 1 week on modern machine.
+It will populate results and update [data folder](data).
 
 You can add your own script, please look at [scripts/data folder](scripts/data).
 
