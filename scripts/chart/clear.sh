@@ -6,4 +6,4 @@ cd "$DIR"
 
 cd "../.."
 
-rm -r "charts/"* || true
+rm -r "chart/"* || true

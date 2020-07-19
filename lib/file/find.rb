@@ -3,6 +3,7 @@ require "digest"
 require "shellwords"
 
 require_relative "../common/colorize"
+require_relative "../common/format"
 
 def find_file_command(extension, type)
   case type
@@ -27,19 +28,30 @@ def find_file_command(extension, type)
 end
 
 def reject_file_duplicates(pathes)
-  warn "rejecting file duplicates"
+  warn "- rejecting file duplicates"
 
   digests = Set.new
 
-  pathes.reject do |path|
+  pathes = pathes.reject.with_index do |path, index|
     content = File.open path, "rb", &:read
-    digest  = Digest::SHA256.digest content
 
+    percent   = format_percent index, pathes.length
+    size_text = format_filesize content.bytesize
+
+    warn "#{percent}% reading path: #{path}, size: #{size_text}"
+
+    digest       = Digest::SHA256.digest content
     is_duplicate = digests.include? digest
+
     digests << digest
 
     is_duplicate
   end
+
+  pathes_text = colorize_length pathes.length
+  warn "selected #{pathes_text} file pathes"
+
+  pathes
 end
 
 def find_file_pathes(root_path, extension, type)
@@ -52,10 +64,9 @@ def find_file_pathes(root_path, extension, type)
   warn "- reading files from root path: #{root_path}, extension: #{extension}, type: #{type}"
 
   pathes = IO.popen(command) { |io| io.readlines :chomp => true }
-  pathes = reject_file_duplicates pathes
 
   pathes_text = colorize_length pathes.length
   warn "found #{pathes_text} file pathes"
 
-  pathes.sort
+  reject_file_duplicates(pathes).sort
 end
