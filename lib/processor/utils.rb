@@ -35,7 +35,6 @@ class Processor
   end
 
   def self.close_and_read(writer, reader, &_read_block)
-    total_is_flushed   = false
     total_closing_time = 0
     modes              = %i[write]
     read_io            = get_io reader
@@ -51,30 +50,17 @@ class Processor
       end
 
       if modes.include? :write
-        if total_is_flushed
-          if writer.respond_to? :close_nonblock
-            is_closed, closing_time = with_time { writer.close_nonblock }
-          else
-            _result, closing_time = with_time { writer.close }
-            is_closed = true
-          end
-
-          total_closing_time += closing_time
-
-          # We may need to read remaining data.
-          modes = [:read] if is_closed
+        if writer.respond_to? :close_nonblock
+          is_closed, closing_time = with_time { writer.close_nonblock }
         else
-          if writer.respond_to? :flush_nonblock
-            is_flushed, flushing_time = with_time { writer.flush_nonblock }
-          else
-            _result, flushing_time = with_time { writer.flush }
-            is_flushed = true
-          end
-
-          total_closing_time += flushing_time
-
-          total_is_flushed = true if is_flushed
+          _result, closing_time = with_time { writer.close }
+          is_closed = true
         end
+
+        total_closing_time += closing_time
+
+        # We may need to read remaining data.
+        modes = [:read] if is_closed
       end
 
     rescue IO::WaitWritable, IO::WaitReadable
