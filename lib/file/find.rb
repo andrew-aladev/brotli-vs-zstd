@@ -42,7 +42,6 @@ def reject_file_duplicates(pathes)
 
     digest       = Digest::SHA256.digest content
     is_duplicate = digests.include? digest
-
     digests << digest
 
     is_duplicate

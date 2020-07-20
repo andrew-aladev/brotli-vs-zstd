@@ -12,7 +12,7 @@ if [ -z "$wikipedia_path" ]; then
   exit 1
 fi
 
-"./lib/process.rb" \
+"./lib/process_files.rb" \
   "wikipedia" \
   "$wikipedia_path" \
   "html:any"

@@ -6,15 +6,8 @@ cd "$DIR"
 
 cd "../.."
 
-cdnjs_path="$1"
-if [ -z "$cdnjs_path" ]; then
-  >&2 echo "cdnjs path is required"
-  exit 1
-fi
-
-"./lib/process_files.rb" \
+"./lib/process_charts.rb" \
   "cdnjs" \
-  "$cdnjs_path" \
   "otf:any" \
   "ttf:any" \
   "svg:any" \
