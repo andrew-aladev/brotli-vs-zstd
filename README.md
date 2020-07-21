@@ -47,7 +47,7 @@ Please run prepared process scripts.
 ./scripts/data/process_wikipedia.sh /mnt/hdd1/wikipedia
 ```
 
-This benchmark will take about `2 weeks` on modern machine.
+This benchmark will take about `3 weeks` on modern machine.
 It will populate results and update [data folder](data).
 
 You can add your own script, please look at [scripts/data folder](scripts/data).

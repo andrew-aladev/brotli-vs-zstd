@@ -12,6 +12,6 @@ def format_percent(index, length)
   )
 end
 
-def format_filesize(size)
-  Filesize.new(size).pretty
+def format_filesize(size, precision = nil)
+  Filesize.new(size).pretty :precision => precision
 end
