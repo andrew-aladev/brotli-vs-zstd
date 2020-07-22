@@ -5,7 +5,7 @@ PROCESSOR_TYPES = %i[brotli zstd].freeze
 
 COMPRESSION_LEVELS = {
   :brotli => BRS::Option::MIN_QUALITY..BRS::Option::MAX_QUALITY,
-  :zstd   => 0..ZSTDS::Option::MAX_COMPRESSION_LEVEL
+  :zstd   => 1..ZSTDS::Option::MAX_COMPRESSION_LEVEL
 }
 .freeze
 
