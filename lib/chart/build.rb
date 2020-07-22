@@ -43,7 +43,7 @@ def build_chart(vendor, extension, type, stats_data, declaration)
   from_size = format_filesize from_size, 0 unless from_size.nil?
   to_size   = format_filesize to_size, 0 unless to_size.nil?
 
-  title = "#{name.capitalize} for #{count} #{extension_title} files from #{vendor.sub('_', ' ')}"
+  title = "#{name.capitalize} for #{count} #{extension_title} files from #{vendor.tr('_', ' ')}"
   title += ", size: #{from_size} - #{to_size}" unless from_size.nil? || to_size.nil?
   title += " (#{postfix})" unless postfix.nil?
 
@@ -92,5 +92,5 @@ def build_chart(vendor, extension, type, stats_data, declaration)
       "#{from_size} - #{to_size}"
     end
 
-  save_chart [vendor, extension, type.to_s, name.sub(" ", "_")], file_name, chart
+  save_chart [vendor, extension, type.to_s, name.tr(" ", "_")], file_name, chart
 end
