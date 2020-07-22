@@ -52,6 +52,20 @@ It will populate results and update [data folder](data).
 
 You can add your own script, please look at [scripts/data folder](scripts/data).
 
+## Chart
+
+Please run prepared process scripts.
+
+```sh
+./scripts/chart/process_google_fonts.sh
+./scripts/chart/process_cdnjs.sh
+./scripts/chart/process_wikipedia.sh
+```
+
+Scripts will populate charts and update [chart folder](chart).
+
+![Example chart](chart/google_fonts/ttf/any/ratio/all.webp)
+
 ## License
 
 MIT license, see LICENSE and AUTHORS.

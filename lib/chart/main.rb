@@ -1,7 +1,8 @@
 require_relative "../file/data"
 require_relative "build"
 
-PERFORMANCE_SCALE = 1 << 20 # MB/s
+PERFORMANCE_SCALE   = 1 << 20
+PERFORMANCE_POSTFIX = "MB/s".freeze
 
 CHART_DECLARATIONS = [
   {
@@ -13,6 +14,7 @@ CHART_DECLARATIONS = [
   {
     :name       => "total compress performance",
     :scale      => PERFORMANCE_SCALE,
+    :postfix    => PERFORMANCE_POSTFIX,
     :value_keys => {
       "compress" => %i[total compress_performance]
     }
@@ -20,6 +22,7 @@ CHART_DECLARATIONS = [
   {
     :name       => "total decompress performance",
     :scale      => PERFORMANCE_SCALE,
+    :postfix    => PERFORMANCE_POSTFIX,
     :value_keys => {
       "decompress" => %i[total decompress_performance]
     }
@@ -34,6 +37,7 @@ CHART_DECLARATIONS = [
   {
     :name       => "compress performance limits",
     :scale      => PERFORMANCE_SCALE,
+    :postfix    => PERFORMANCE_POSTFIX,
     :value_keys => {
       "min" => %i[single compress_performance min],
       "max" => %i[single compress_performance max]
@@ -42,6 +46,7 @@ CHART_DECLARATIONS = [
   {
     :name       => "decompress performance limits",
     :scale      => PERFORMANCE_SCALE,
+    :postfix    => PERFORMANCE_POSTFIX,
     :value_keys => {
       "min" => %i[single decompress_performance min],
       "max" => %i[single decompress_performance max]
@@ -59,6 +64,7 @@ CHART_DECLARATIONS = [
   {
     :name       => "compress performance",
     :scale      => PERFORMANCE_SCALE,
+    :postfix    => PERFORMANCE_POSTFIX,
     :value_keys => {
       "mode"               => %i[single compress_performance mode],
       "median"             => %i[single compress_performance median],
@@ -69,6 +75,7 @@ CHART_DECLARATIONS = [
   {
     :name       => "decompress performance",
     :scale      => PERFORMANCE_SCALE,
+    :postfix    => PERFORMANCE_POSTFIX,
     :value_keys => {
       "mode"               => %i[single decompress_performance mode],
       "median"             => %i[single decompress_performance median],
@@ -80,9 +87,7 @@ CHART_DECLARATIONS = [
 .freeze
 
 def process_charts(vendor, option_groups)
-  warn "-- processing charts, vendor: #{vendor}"
-
-  option_groups.each do |options|
+  option_groups.each.with_index do |options, index|
     extension = options[:extension]
     type      = options[:type]
 
@@ -92,8 +97,16 @@ def process_charts(vendor, option_groups)
       next
     end
 
-    data.each do |stats_data|
-      CHART_DECLARATIONS.each do |declaration|
+    percent = format_percent index, option_groups.length
+    warn "- #{percent}% processing charts, vendor: #{vendor}, extension: #{extension}, type: #{type}"
+
+    CHART_DECLARATIONS.each.with_index do |declaration, declaration_index|
+      name = declaration[:name]
+
+      declaration_percent = format_percent declaration_index, CHART_DECLARATIONS.length
+      warn "#{declaration_percent}% processing chart, name: #{name}"
+
+      data.each do |stats_data|
         build_chart vendor, extension, type, stats_data, declaration
       end
     end

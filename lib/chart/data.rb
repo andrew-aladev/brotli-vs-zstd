@@ -1,7 +1,7 @@
 require "gruff"
 
 CHART_PATH      = File.join(File.dirname(__FILE__), "..", "..", "chart").freeze
-CHART_EXTENSION = ".png".freeze
+CHART_EXTENSION = ".webp".freeze
 
 def save_chart(directory_names, file_name, chart)
   directory_path = File.join CHART_PATH, *directory_names
