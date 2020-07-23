@@ -5,8 +5,9 @@ Tests will be executed in single threaded mode and will provide accurate and rep
 
 ## Installation
 
-You need to install recent version of [brotli](https://github.com/google/brotli),
-[zstd](https://github.com/facebook/zstd) and [ruby](https://github.com/ruby/ruby).
+You need to install recent version of
+[brotli](https://github.com/google/brotli), [zstd](https://github.com/facebook/zstd),
+[image magick](https://github.com/ImageMagick/ImageMagick) and [ruby](https://github.com/ruby/ruby).
 
 ```sh
 gem install bundler
@@ -47,10 +48,10 @@ Please run prepared process scripts.
 ./scripts/data/process_wikipedia.sh /mnt/hdd1/wikipedia
 ```
 
-This benchmark will take about `3 weeks` on modern machine.
+This benchmark will take about `4 weeks` on modern machine.
 It will populate results and update [data folder](data).
 
-You can add your own script, please look at [scripts/data folder](scripts/data).
+You can add your own custom script, please look at [scripts/data folder](scripts/data).
 
 ## Chart
 
@@ -63,6 +64,8 @@ Please run prepared process scripts.
 ```
 
 Scripts will populate charts and update [chart folder](chart).
+
+Example:
 
 ![Example chart](chart/google_fonts/ttf/any/ratio/all.webp)
 
