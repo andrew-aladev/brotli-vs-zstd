@@ -54,9 +54,9 @@ def build_chart(vendor, extension, type, stats_data, declaration)
     label =
       case processor_type
       when :brotli
-        "br"
+        "b"
       when :zstd
-        "zst"
+        "z"
       else
         raise StandardError, "received invalid processor type: #{processor_type}"
       end
