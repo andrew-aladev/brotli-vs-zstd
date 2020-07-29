@@ -1,7 +1,7 @@
 # Comparison of brotli and zstd
 
 Please disable any performance boosts for your CPU and force base clock.
-Tests will be executed in single threaded mode and will provide accurate and reproducible results.
+Tests will be executed in single threaded mode and provide accurate and reproducible results (on same CPU).
 
 ## Installation
 
