@@ -27,7 +27,7 @@ git clone git@github.com:google/fonts.git --depth=1
 git clone git@github.com:cdnjs/cdnjs.git --depth=1
 mkdir wikipedia
 wget "https://dumps.wikimedia.org/other/static_html_dumps/current/en/wikipedia-en-html.tar.7z"
-7z x -so wikipedia-en-html.tar.7z | tar xf - -C wikipedia
+7z x -so wikipedia-en-html.tar.7z | tar xvf - -C wikipedia
 rm wikipedia-en-html.tar.7z
 ```
 
