@@ -169,3 +169,5 @@ Performance/Squeeze:
   Enabled: true
 Performance/StringInclude:
   Enabled: true
+Performance/Sum:
+  Enabled: true
