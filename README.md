@@ -71,4 +71,4 @@ Example:
 
 ## License
 
-MIT license, see [LICENSE](LICENSE) and [AUTHORS](AUTHORS).
+MIT license, see [LICENSE](LICENSE), [AUTHORS](AUTHORS) and [NOTICE](NOTICE).
