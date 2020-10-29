@@ -12,7 +12,7 @@ TYPE_TITLES = {
 
 CHART_SIZE    = "600x1800".freeze
 CHART_OPTIONS = {
-  :font             => File.join(File.dirname(__FILE__), "..", "..", "fonts", "RobotoMono.ttf"),
+  :font             => File.join(File.dirname(__FILE__), "..", "..", "font", "RobotoMono.ttf"),
   :title_font_size  => 20.0,
   :legend_font_size => 16.0,
   :marker_font_size => 14.0,

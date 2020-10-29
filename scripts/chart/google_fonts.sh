@@ -6,6 +6,6 @@ cd "$DIR"
 
 cd "../.."
 
-"./lib/process_charts.rb" \
-  "wikipedia" \
-  "html:any"
+"./lib/chart/main.rb" \
+  "google_fonts" \
+  "ttf:any"

@@ -1,7 +1,7 @@
 require "filesize"
 
-FORMAT_PERCENT_ROUND_LENGTH = 2
 COMPRESSION_LEVEL_FORMAT    = "%2d".freeze
+FORMAT_PERCENT_ROUND_LENGTH = 2
 
 def format_compression_level(compression_level)
   format COMPRESSION_LEVEL_FORMAT, compression_level

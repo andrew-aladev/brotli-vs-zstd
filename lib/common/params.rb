@@ -1,4 +1,4 @@
-def parse_option_groups(params)
+def parse_params(params)
   raise StandardError, "at least one param is required" if params.empty?
 
   params.flat_map do |param|

@@ -12,7 +12,7 @@ if [ -z "$google_fonts_path" ]; then
   exit 1
 fi
 
-"./lib/process_files.rb" \
+"./lib/file/main.rb" \
   "google_fonts" \
   "$google_fonts_path" \
   "ttf:any"
