@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require_relative "../common/params"
-# require_relative "../file/main"
 
 vendor    = ARGV[0]
 root_path = ARGV[1]

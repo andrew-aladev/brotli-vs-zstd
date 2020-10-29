@@ -19,10 +19,10 @@ bundle install
 Please download recent versions of [google fonts](https://github.com/google/fonts),
 [cdnjs](https://github.com/cdnjs/cdnjs) and
 [static HTML dump of wikipedia](https://dumps.wikimedia.org/other/static_html_dumps/current/en/).
-You can use any large HDD `1 TB +`, for example `/mnt/hdd1`.
+You can use any large HDD `1 TB +`, for example `/mnt/data`.
 
 ```sh
-cd /mnt/hdd1
+cd /mnt/data
 git clone git@github.com:google/fonts.git --depth=1
 git clone git@github.com:cdnjs/cdnjs.git --depth=1
 mkdir wikipedia
@@ -43,9 +43,9 @@ Benchmark requires about `8 GB` of free RAM.
 Please run prepared process scripts.
 
 ```sh
-./scripts/data/process_google_fonts.sh /mnt/hdd1/fonts
-./scripts/data/process_cdnjs.sh /mnt/hdd1/cdnjs
-./scripts/data/process_wikipedia.sh /mnt/hdd1/wikipedia
+./scripts/data/process_google_fonts.sh /mnt/data/fonts
+./scripts/data/process_cdnjs.sh /mnt/data/cdnjs
+./scripts/data/process_wikipedia.sh /mnt/data/wikipedia
 ```
 
 This benchmark will take about `4 weeks` on modern machine.
