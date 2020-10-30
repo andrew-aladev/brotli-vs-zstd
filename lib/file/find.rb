@@ -4,56 +4,57 @@ require "set"
 
 require_relative "../common/format"
 
+MIN_PATTERN = "[._/-]min".freeze
+
 def get_path_regexp(extension, type)
-  data =
+  pattern =
     case type
     when :min
-      "
-        (?<=
-          \.min
-          \-min
-          \.mini
-          \-mini
-        )
-      "
+      "(?<=#{MIN_PATTERN})"
     when :not_min
-      "
-        (?<!
-          \.min
-          \-min
-          \.mini
-          \-mini
-        )
-      "
+      "(?<!#{MIN_PATTERN})"
     else
       ""
     end
 
-  data << "\.#{extension}$"
+  pattern << "\\.#{extension}$"
 
-  Regexp.new data, Regexp::IGNORECASE | Regexp::EXTENDED
+  Regexp.new pattern, Regexp::IGNORECASE
 end
 
-def find_file_pathes(root_path, extension, type)
+# Total amount of files will be about several billions.
+# We have to use lazy find.
+
+def find_file_contents(root_path, extension, type)
   warn "- reading files from root path: #{root_path}, extension: #{extension}, type: #{type}"
 
-  regexp  = get_path_regexp extension, type
+  regexp = get_path_regexp extension, type
+
+  file_pathes = Find.find(root_path)
+    .lazy
+    .select { |path| File.file?(path) && regexp.match?(path) }
+
+  file_contents = file_pathes.map do |path|
+    content   = File.open path, "rb", &:read
+    size_text = format_filesize content.bytesize
+
+    warn "read path: #{path}, size: #{size_text}"
+
+    content
+  end
+
   digests = Set.new
 
-  Find.find(root_path)
-    .lazy
-    .select do |path|
-      next false unless regexp.match? path
+  file_contents.reject do |content|
+    digest       = Digest::SHA256.digest content
+    is_duplicate = digests.include? digest
 
-      content   = File.open path, "rb", &:read
-      size_text = format_filesize content.bytesize
-
-      warn "reading path: #{path}, size: #{size_text}"
-
-      digest       = Digest::SHA256.digest content
-      is_duplicate = digests.include? digest
+    if is_duplicate
+      warn "found file duplicate, ignoring"
+    else
       digests << digest
-
-      !is_duplicate
     end
+
+    is_duplicate
+  end
 end
