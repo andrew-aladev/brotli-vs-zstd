@@ -50,6 +50,7 @@ end
 
 def get_stats_from_efficiencies(efficiencies)
   first_efficiency = efficiencies.first
+  return {} if first_efficiency.nil?
 
   first_efficiency.keys.each_with_object({}) do |key, stat_groups|
     values = efficiencies.map { |efficiency| efficiency[key] }

@@ -4,6 +4,7 @@ gem "colorize"
 gem "descriptive_statistics"
 gem "filesize"
 gem "gruff"
+gem "parallel"
 gem "ruby-brs"
 gem "ruby-zstds"
 

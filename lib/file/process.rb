@@ -2,9 +2,7 @@ require_relative "data"
 require_relative "find"
 # require_relative "group"
 
-# require_relative "../common/colorize"
-# require_relative "../common/format"
-# require_relative "../processor/main"
+require_relative "../processor/main"
 
 def process_files(vendor, root_path, option_groups)
   warn "-- processing files, vendor: #{vendor}, root path: #{root_path}"
@@ -12,31 +10,25 @@ def process_files(vendor, root_path, option_groups)
   option_groups.each do |options|
     extension = options[:extension]
     type      = options[:type]
+    data      = []
 
-    contents = find_file_contents root_path, extension, type
-    contents.each {}
-    # content_groups = group_file_contents_by_size_histogram contents
+    contents     = find_file_contents root_path, extension, type
+    stats, count = get_processor_stats contents
+    data << {
+      :from_size => nil,
+      :to_size   => nil,
+      :count     => count,
+      :stats     => stats
+    }
+
+    save_files_data vendor, extension, type, data
   end
+
+  nil
 end
 
 # def process_files(vendor, root_path, option_groups)
 #   option_groups.each do |options|
-#     data      = []
-#
-#     pathes = find_file_pathes root_path, extension, type
-#     if pathes.empty?
-#       warn "no files for processing"
-#       next
-#     end
-#
-#     stats = get_processor_stats pathes
-#     data << {
-#       :from_size => nil,
-#       :to_size   => nil,
-#       :count     => pathes.length,
-#       :stats     => stats
-#     }
-#
 #     groups = group_file_pathes_by_size_histogram pathes
 #     groups.each do |group|
 #       from_size = group[:from_size]
@@ -68,6 +60,4 @@ end
 #
 #     save_files_data vendor, extension, type, data
 #   end
-#
-#   nil
 # end

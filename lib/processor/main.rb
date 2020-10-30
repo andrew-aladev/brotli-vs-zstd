@@ -1,28 +1,28 @@
-require_relative "../common/format"
-require_relative "wrapper"
+require "parallel"
+
 require_relative "params"
+require_relative "wrapper"
 
-def get_processor_stats(pathes)
-  params_combinations = get_processor_params_combinations
-
-  processors = params_combinations.map do |params|
+def get_processor_stats(contents)
+  processors = get_processor_params_combinations.map do |params|
     Processor.new params[:type], params[:compression_level]
   end
 
+  count = 0
+
   begin
-    pathes.each.with_index do |path, index|
-      content = File.open path, "rb", &:read
+    contents.each do |content|
+      Parallel.each(processors) do |processor|
+        processor.process content
+      end
 
-      percent   = format_percent index, pathes.length
-      size_text = format_filesize content.bytesize
-
-      warn "- #{percent}% processing path: #{path}, size: #{size_text}"
-
-      processors.each { |processor| processor.process content }
+      count += 1
     end
   ensure
     processors.each(&:close)
   end
 
-  processors.map(&:get_stats)
+  stats = processors.map(&:get_stats)
+
+  [stats, count]
 end
