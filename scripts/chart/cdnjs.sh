@@ -6,6 +6,8 @@ cd "$DIR"
 
 cd "../.."
 
+rm -r "chart/cdnjs" || true
+
 "./lib/chart/main.rb" \
   "cdnjs" \
   "otf:any" \

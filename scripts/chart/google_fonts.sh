@@ -6,6 +6,8 @@ cd "$DIR"
 
 cd "../.."
 
+rm -r "chart/google_fonts" || true
+
 "./lib/chart/main.rb" \
   "google_fonts" \
   "ttf:any"
