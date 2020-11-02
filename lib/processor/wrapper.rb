@@ -177,14 +177,18 @@ class Processor
   end
 
   protected def get_compression_options
-    case @type
-    when :brotli
-      { :quality => @compression_level }
-    when :zstd
-      { :compression_level => @compression_level }
-    else
-      raise_invalid_processor_type
-    end
+    options =
+      case @type
+      when :brotli
+        { :quality => @compression_level }
+      when :zstd
+        { :compression_level => @compression_level }
+      else
+        raise_invalid_processor_type
+      end
+
+    # We don't want to waste time on acquiring/releasing VM lock.
+    options.merge :gvl => true
   end
 
   protected def raise_invalid_processor_type
