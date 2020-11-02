@@ -75,7 +75,7 @@ Please read more about `chart_type` in [lib/chart/process.rb](lib/chart/process.
 
 Example:
 
-![Example chart](chart/google_fonts/ttf/any/ratio/all.webp)
+![Example chart](chart/cdnjs/js/min/ratio/all.webp)
 
 ## License
 
