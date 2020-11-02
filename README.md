@@ -1,5 +1,8 @@
 # Comparison of brotli and zstd
 
+There are similar bindings for ruby: [ruby-brs](https://github.com/andrew-aladev/ruby-brs) and [ruby-zstds](https://github.com/andrew-aladev/ruby-zstds), it supports streaming API.
+It is possible to make easy benchmark between [brotli](https://github.com/google/brotli) and [zstd](https://github.com/facebook/zstd).
+
 ## Installation
 
 You need to install recent version of
@@ -32,7 +35,7 @@ rm wikipedia-en-html.tar.7z
 
 We are creating compressors and decompressors for each param combination.
 All compressors and decompressors are sitting inside RAM together.
-Each file passes through all processors.
+Each file passes through all processors using all available processors.
 Benchmark requires about `8 GB` of free RAM.
 
 ## Benchmark
@@ -40,27 +43,35 @@ Benchmark requires about `8 GB` of free RAM.
 Please run prepared process scripts.
 
 ```sh
-./scripts/data/process_google_fonts.sh /mnt/data/fonts
-./scripts/data/process_cdnjs.sh /mnt/data/cdnjs
-./scripts/data/process_wikipedia.sh /mnt/data/wikipedia
+./scripts/data/google_fonts.sh /mnt/data/fonts
+./scripts/data/cdnjs.sh /mnt/data/cdnjs
+./scripts/data/wikipedia.sh /mnt/data/wikipedia
 ```
 
-This benchmark will take about `4 weeks` on modern machine.
-It will populate results and update [data folder](data).
+This process will take about `4 weeks` on modern machine.
+Accurate performance measurement requires running in single thread, so processing take a lot of time.
 
-You can add your own custom script, please look at [scripts/data folder](scripts/data).
+It will populate results and update [data folder](data).
+You can add your own custom script, please look at scripts inside [scripts/data](scripts/data) folder.
 
 ## Chart
 
 Please run prepared process scripts.
 
 ```sh
-./scripts/chart/process_google_fonts.sh
-./scripts/chart/process_cdnjs.sh
-./scripts/chart/process_wikipedia.sh
+./scripts/chart/google_fonts.sh
+./scripts/chart/cdnjs.sh
+./scripts/chart/wikipedia.sh
 ```
 
-Scripts will populate charts and update [chart folder](chart).
+It will populate charts and update [chart folder](chart).
+You can add your own custom script, please look at scripts inside [scripts/chart](scripts/chart) folder.
+
+Chart folder path consist of `name/extension/type/chart_type`, files inside may be `from_size - to_size.webp` or `all.webp`.
+For example chart folder path `cdnjs/js/min/ratio`, file inside `64 KiB - 128 KiB.webp`.
+
+`type` may be `any/min/not_min`.
+Please read more about `chart_type` in [lib/chart/process.rb](lib/chart/process.rb).
 
 Example:
 

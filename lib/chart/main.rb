@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative "../chart/main"
 require_relative "../common/params"
+require_relative "process"
 
 vendor = ARGV[0]
 params = ARGV[1..-1]
