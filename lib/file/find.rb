@@ -26,8 +26,6 @@ end
 # We have to use lazy find.
 
 def find_file_contents(root_path, extension, type)
-  warn "- reading files from root path: #{root_path}, extension: #{extension}, type: #{type}"
-
   regexp = get_path_regexp extension, type
 
   file_pathes = Find.find(root_path)

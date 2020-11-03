@@ -23,7 +23,7 @@ def process_files(vendor, root_path, option_groups)
         false
       end
 
-    warn "- processing all files"
+    warn "- processing all files, extension: #{extension}, type: #{type}"
 
     stats, count = get_processor_stats all_contents
     if count.zero?
@@ -47,7 +47,11 @@ def process_files(vendor, root_path, option_groups)
       from_size_text = format_filesize from_size
       to_size_text   = format_filesize to_size
 
-      warn "- processing group of files, from size: #{from_size_text}, to size: #{to_size_text}"
+      warn "- processing group of files, " \
+        "extension: #{extension}, " \
+        "type: #{type}, " \
+        "from size: #{from_size_text}, " \
+        "to size: #{to_size_text}"
 
       stats, count = get_processor_stats group_contents
       if count.zero?

@@ -24,7 +24,7 @@ def group_file_contents_by_size_histogram(contents_provider, max_content_size)
 
     contents = contents_provider.call
       .select do |content|
-        is_inside = content.bytesize >= from_size && content.bytesize <= to_size
+        is_inside = content.bytesize >= boundary[:from] && content.bytesize <= boundary[:to]
 
         warn "content is outside boundaries" unless is_inside
 
