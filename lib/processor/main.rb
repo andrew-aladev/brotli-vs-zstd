@@ -1,4 +1,5 @@
 require "colorize"
+require "parallel"
 
 require_relative "params"
 require_relative "wrapper"
@@ -12,7 +13,10 @@ def get_processor_stats(contents)
 
   begin
     contents.each do |content|
-      processors.each { |processor| processor.process content }
+      # Running processors in single separate thread.
+      Parallel.each processors, :in_threads => 1 do |processor|
+        processor.process content
+      end
 
       warn "content #{'processed'.light_green}"
 
