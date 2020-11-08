@@ -48,7 +48,7 @@ Please run prepared process scripts.
 ./scripts/data/wikipedia.sh /mnt/data/wikipedia
 ```
 
-This process will take about `4 weeks` on modern machine.
+This process will take about `3 weeks` on modern machine.
 Accurate performance measurement requires running in single thread, so processing take a lot of time.
 
 It will populate results and update [data folder](data).
