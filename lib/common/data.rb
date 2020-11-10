@@ -18,7 +18,7 @@ def save_data(directory_names, file_name, data)
 
   full_file_name = file_name + DATA_EXTENSION
   file_path      = File.join directory_path, full_file_name
-  File.write file_path, data.to_yaml
+  File.write file_path, data.to_yaml, :mode => "wb"
 
   nil
 end
