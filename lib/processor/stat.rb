@@ -17,24 +17,24 @@ def get_efficiency_from_result(result)
   decompress_time         = result[:decompress_time]
 
   ratio =
-    if !compressed_content_size.zero?
-      content_size.to_f / compressed_content_size
-    else
+    if compressed_content_size.zero?
       0
+    else
+      content_size.to_f / compressed_content_size
     end
 
   compress_performance =
-    if !compress_time.zero?
-      content_size.to_f / compress_time
-    else
+    if compress_time.zero?
       0
+    else
+      content_size.to_f / compress_time
     end
 
   decompress_performance =
-    if !decompress_time.zero?
-      compressed_content_size.to_f / decompress_time
-    else
+    if decompress_time.zero?
       0
+    else
+      compressed_content_size.to_f / decompress_time
     end
 
   {
