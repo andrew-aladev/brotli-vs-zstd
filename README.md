@@ -36,7 +36,7 @@ rm wikipedia-en-html.tar.7z
 We are creating compressors and decompressors for each param combination.
 All compressors and decompressors (34 processors * 2) are sitting inside RAM together.
 Each file passes through all processors using all available processors.
-Benchmark requires about `10 GB` of free RAM.
+Benchmark requires about `12 GB` of free RAM.
 
 ## Benchmark
 
