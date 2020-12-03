@@ -6,6 +6,8 @@ AllCops:
 
 Layout/EmptyLinesAroundExceptionHandlingKeywords:
   Enabled: false
+Layout/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: true
 Layout/HashAlignment:
   EnforcedHashRocketStyle: table
 Layout/LineLength:
