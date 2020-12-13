@@ -36,7 +36,7 @@ rm wikipedia-en-html.tar.7z
 We are creating compressors and decompressors for each param combination.
 All compressors and decompressors (34 processors * 2) are sitting inside RAM together.
 Each file passes through all processors using all available processors.
-Benchmark requires about `12 GB` of free RAM.
+Benchmark requires about `14 GB` of free RAM.
 
 ## Benchmark
 
@@ -48,7 +48,7 @@ Please run prepared process scripts.
 ./scripts/data/wikipedia.sh /mnt/data/wikipedia
 ```
 
-This process will take about `5 weeks` on modern machine.
+This process will take about `7 weeks` on modern machine.
 Accurate performance measurement requires running in single thread, so processing take a lot of time.
 
 It will populate results and update [data folder](data).
