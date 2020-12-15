@@ -7,6 +7,7 @@ gem "gruff"
 gem "parallel"
 gem "ruby-brs"
 gem "ruby-zstds"
+gem "sparsehash"
 
 group :development, :test do
   gem "rubocop"

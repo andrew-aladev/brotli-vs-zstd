@@ -14,11 +14,14 @@ fi
 
 rm -r "data/cdnjs" || true
 
-"./lib/file/main.rb" \
-  "cdnjs" \
-  "$cdnjs_path" \
-  "otf:any" \
-  "ttf:any" \
-  "svg:any" \
-  "css:min,not_min,any" \
+datas=(
+  "otf:any"
+  "ttf:any"
+  "svg:any"
+  "css:min,not_min,any"
   "js:min,not_min,any"
+)
+
+for data in "${datas[@]}"; do
+  "./lib/file/main.rb" "cdnjs" "$cdnjs_path" "$data"
+done

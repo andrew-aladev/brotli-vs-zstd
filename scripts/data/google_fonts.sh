@@ -14,7 +14,4 @@ fi
 
 rm -r "data/google_fonts" || true
 
-"./lib/file/main.rb" \
-  "google_fonts" \
-  "$google_fonts_path" \
-  "ttf:any"
+"./lib/file/main.rb" "google_fonts" "$google_fonts_path" "ttf:any"

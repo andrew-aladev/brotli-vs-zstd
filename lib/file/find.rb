@@ -1,6 +1,6 @@
 require "digest"
 require "find"
-require "set"
+require "sparsehash"
 
 require_relative "../common/format"
 
@@ -41,7 +41,7 @@ def find_file_contents(root_path, extension, type)
     content
   end
 
-  digests = Set.new
+  digests = Sparsehash::SparseHashSet.new
 
   file_contents.reject do |content|
     digest       = Digest::SHA256.digest content

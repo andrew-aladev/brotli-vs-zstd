@@ -6,6 +6,7 @@ It is possible to make easy benchmark between [brotli](https://github.com/google
 ## Installation
 
 You need to install recent version of
+[sparsehash](https://github.com/sparsehash/sparsehash),
 [brotli](https://github.com/google/brotli), [zstd](https://github.com/facebook/zstd),
 [image magick](https://github.com/ImageMagick/ImageMagick) and [ruby](https://github.com/ruby/ruby).
 
