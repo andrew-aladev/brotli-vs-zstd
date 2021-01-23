@@ -64,14 +64,16 @@ class Processor
     total_compressed_content_size = 0
     total_decompress_time         = 0
 
-    total_compress_time = self.class.write_and_read @compressor, @compressor_read_io, content do |compressed_content, _read_time|
-      total_compressed_content_size += compressed_content.bytesize
+    total_compress_time = self.class.write_and_read @compressor, @compressor_read_io, content \
+      do |compressed_content, _read_time|
+        total_compressed_content_size += compressed_content.bytesize
 
-      self.class.write_and_read @decompressor_write_io, @decompressor, compressed_content do |decompressed_content, decompress_time|
-        process_total_decompressed_content decompressed_content
-        total_decompress_time += decompress_time
+        self.class.write_and_read @decompressor_write_io, @decompressor, compressed_content \
+          do |decompressed_content, decompress_time|
+            process_total_decompressed_content decompressed_content
+            total_decompress_time += decompress_time
+          end
       end
-    end
 
     self.class.get_result(
       content.bytesize,
@@ -134,14 +136,16 @@ class Processor
     total_compressed_content_size = 0
     total_decompress_time         = 0
 
-    total_compress_time = self.class.close_and_read @compressor, @compressor_read_io do |compressed_content, _read_time|
-      total_compressed_content_size += compressed_content.bytesize
+    total_compress_time = self.class.close_and_read @compressor, @compressor_read_io \
+      do |compressed_content, _read_time|
+        total_compressed_content_size += compressed_content.bytesize
 
-      self.class.write_and_read @decompressor_write_io, @decompressor, compressed_content do |decompressed_content, decompress_time|
-        process_total_decompressed_content decompressed_content
-        total_decompress_time += decompress_time
+        self.class.write_and_read @decompressor_write_io, @decompressor, compressed_content \
+          do |decompressed_content, decompress_time|
+            process_total_decompressed_content decompressed_content
+            total_decompress_time += decompress_time
+          end
       end
-    end
 
     self.class.close_and_read @decompressor_write_io, @decompressor do |decompressed_content, decompress_time|
       process_total_decompressed_content decompressed_content
