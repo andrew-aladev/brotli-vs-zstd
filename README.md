@@ -32,13 +32,6 @@ wget "https://dumps.wikimedia.org/other/static_html_dumps/current/en/wikipedia-e
 rm wikipedia-en-html.tar.7z
 ```
 
-## RAM usage
-
-We are creating compressors and decompressors for each param combination.
-All compressors and decompressors (34 processors * 2) are sitting inside RAM together.
-Each file passes through all processors using all available processors.
-Benchmark requires about `14 GB` of free RAM.
-
 ## Benchmark
 
 Please run prepared process scripts.
