@@ -36,7 +36,7 @@ def find_file_contents(root_path, extension, type)
     content   = File.open path, "rb", &:read
     size_text = format_filesize content.bytesize
 
-    warn "read path: #{path}, size: #{size_text}"
+    warn "reading path: #{path}, size: #{size_text}"
 
     content
   end

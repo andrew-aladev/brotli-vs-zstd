@@ -1,32 +1,39 @@
 require "colorize"
-require "parallel"
 
 require_relative "params"
 require_relative "wrapper"
 
-def get_processor_stats(contents)
-  processors = get_processor_params_combinations.map do |params|
-    Processor.new params[:type], params[:compression_level]
-  end
+def get_processor_stats(contents_provider, need_max_size: false)
+  # Enumerator is lazy, we can calculate count and max size from first contents.
+  is_first_contents = true
+  count             = 0
+  max_size          = 0
 
-  count = 0
+  stats = get_processor_params_combinations.map do |params|
+    processor = Processor.new params[:type], params[:compression_level]
 
-  begin
-    contents.each do |content|
-      # Running processors in single separate thread.
-      Parallel.each processors, :in_threads => 1 do |processor|
+    begin
+      warn "processing contents, " \
+        "type: #{params[:type]}, " \
+        "compression level: #{params[:compression_level]}"
+
+      contents_provider.call.each do |content|
         processor.process content
+        warn "content #{'processed'.light_green}"
+
+        if is_first_contents
+          count += 1
+          max_size = content.bytesize if need_max_size && max_size < content.bytesize
+        end
       end
 
-      warn "content #{'processed'.light_green}"
-
-      count += 1
+      is_first_contents = false
+    ensure
+      processor.close
     end
-  ensure
-    processors.each(&:close)
+
+    processor.get_stats
   end
 
-  stats = processors.map(&:get_stats)
-
-  [stats, count]
+  [stats, count, max_size]
 end

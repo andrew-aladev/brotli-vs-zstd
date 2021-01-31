@@ -14,18 +14,9 @@ def process_files(vendor, root_path, option_groups)
 
     contents_provider = proc { find_file_contents root_path, extension, type }
 
-    # Enumerator is lazy, we can find max content size during first processing (without groups).
-    max_content_size = 0
-
-    all_contents = contents_provider.call
-      .reject do |content|
-        max_content_size = content.bytesize if max_content_size < content.bytesize
-        false
-      end
-
     warn "- processing all files, extension: #{extension}, type: #{type}"
 
-    stats, count = get_processor_stats all_contents
+    stats, count, max_size = get_processor_stats contents_provider, :need_max_size => true
     if count.zero?
       warn "there are no files"
       next
@@ -38,11 +29,11 @@ def process_files(vendor, root_path, option_groups)
       :stats     => stats
     }
 
-    groups = group_file_contents_by_size_histogram contents_provider, max_content_size
+    groups = group_file_contents_by_size_histogram contents_provider, max_size
     groups.each do |group|
       from_size      = group[:from_size]
       to_size        = group[:to_size]
-      group_contents = group[:contents]
+      group_provider = group[:provider]
 
       from_size_text = format_filesize from_size
       to_size_text   = format_filesize to_size
@@ -53,7 +44,7 @@ def process_files(vendor, root_path, option_groups)
         "from size: #{from_size_text}, " \
         "to size: #{to_size_text}"
 
-      stats, count = get_processor_stats group_contents
+      stats, count = get_processor_stats group_provider
       if count.zero?
         warn "group of files is empty"
         next
