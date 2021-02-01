@@ -25,16 +25,20 @@ bundle install
 
 Please download recent versions of
 [google fonts](https://github.com/google/fonts),
-[cdnjs](https://github.com/cdnjs/cdnjs) and
-[static HTML dump of wikipedia](https://dumps.wikimedia.org/other/static_html_dumps/current/eu/).
+[static HTML dump of wikipedia](https://dumps.wikimedia.org/other/static_html_dumps/current/eu/) and
+[cdnjs](https://github.com/cdnjs/cdnjs).
 
 ```sh
 git clone git@github.com:google/fonts.git --depth=1
-git clone git@github.com:cdnjs/cdnjs.git --depth=1
+
 mkdir wikipedia
 wget "https://dumps.wikimedia.org/other/static_html_dumps/current/eu/wikipedia-eu-html.tar.7z"
 7z x -so wikipedia-eu-html.tar.7z | tar xf - -C wikipedia
 rm wikipedia-eu-html.tar.7z
+
+git clone git@github.com:cdnjs/cdnjs.git --depth=1
+cd cdnjs
+rm -rf .git
 ```
 
 ## Benchmark
@@ -43,8 +47,8 @@ Please run prepared process scripts.
 
 ```sh
 ./scripts/data/google_fonts.sh /mnt/data/fonts
-./scripts/data/cdnjs.sh /mnt/data/cdnjs
 ./scripts/data/wikipedia.sh /mnt/data/wikipedia
+./scripts/data/cdnjs.sh /mnt/data/cdnjs
 ```
 
 Accurate performance measurement requires running in single thread, so processing takes a lot of time.
@@ -58,8 +62,8 @@ Please run prepared process scripts.
 
 ```sh
 ./scripts/chart/google_fonts.sh
-./scripts/chart/cdnjs.sh
 ./scripts/chart/wikipedia.sh
+./scripts/chart/cdnjs.sh
 ```
 
 It will populate charts and update [chart folder](chart).
