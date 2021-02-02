@@ -37,8 +37,7 @@ wget "https://dumps.wikimedia.org/other/static_html_dumps/current/eu/wikipedia-e
 rm wikipedia-eu-html.tar.7z
 
 git clone git@github.com:cdnjs/cdnjs.git --depth=1
-cd cdnjs
-rm -rf .git
+./scripts/cleanup_cdnjs.sh cdnjs
 ```
 
 ## Benchmark
