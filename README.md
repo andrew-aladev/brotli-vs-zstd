@@ -30,6 +30,7 @@ Please download recent versions of
 
 ```sh
 git clone git@github.com:google/fonts.git --depth=1
+rm -rf fonts/.git
 
 mkdir wikipedia
 wget "https://dumps.wikimedia.org/other/static_html_dumps/current/eu/wikipedia-eu-html.tar.7z"
@@ -37,6 +38,7 @@ wget "https://dumps.wikimedia.org/other/static_html_dumps/current/eu/wikipedia-e
 rm wikipedia-eu-html.tar.7z
 
 git clone git@github.com:cdnjs/cdnjs.git --depth=1
+rm -rf cdnjs/.git
 ./scripts/cleanup_cdnjs.sh cdnjs
 ```
 

@@ -6,6 +6,15 @@ require_relative "stat"
 require_relative "utils"
 
 class Processor
+  # Test will be executed in single thread.
+  # We need to enable gvl, it will provides more accurate result.
+  # Ruby won't waste time on acquiring/releasing VM lock.
+
+  DEFAULT_OPTIONS = {
+    :gvl => true
+  }
+  .freeze
+
   def initialize(type, compression_level)
     @type              = type
     @compression_level = compression_level
@@ -36,13 +45,14 @@ class Processor
 
   protected def init_decompressor
     decompressor_read_io, @decompressor_write_io = IO.pipe
+    decompression_options                        = get_decompression_options
 
     @decompressor =
       case @type
       when :brotli
-        BRS::Stream::Reader.new decompressor_read_io
+        BRS::Stream::Reader.new decompressor_read_io, decompression_options
       when :zstd
-        ZSTDS::Stream::Reader.new decompressor_read_io
+        ZSTDS::Stream::Reader.new decompressor_read_io, decompression_options
       else
         raise_invalid_processor_type
       end
@@ -96,12 +106,14 @@ class Processor
         raise_invalid_processor_type
       end
 
+    decompression_options = get_decompression_options
+
     decompressed_content, decompress_time =
       case @type
       when :brotli
-        with_time { BRS::String.decompress compressed_content }
+        with_time { BRS::String.decompress compressed_content, decompression_options }
       when :zstd
-        with_time { ZSTDS::String.decompress compressed_content }
+        with_time { ZSTDS::String.decompress compressed_content, decompression_options }
       else
         raise_invalid_processor_type
       end
@@ -181,14 +193,21 @@ class Processor
   end
 
   protected def get_compression_options
-    case @type
-    when :brotli
-      { :quality => @compression_level }
-    when :zstd
-      { :compression_level => @compression_level }
-    else
-      raise_invalid_processor_type
-    end
+    options =
+      case @type
+      when :brotli
+        { :quality => @compression_level }
+      when :zstd
+        { :compression_level => @compression_level }
+      else
+        raise_invalid_processor_type
+      end
+
+    DEFAULT_OPTIONS.merge options
+  end
+
+  protected def get_decompression_options
+    DEFAULT_OPTIONS
   end
 
   protected def raise_invalid_processor_type
