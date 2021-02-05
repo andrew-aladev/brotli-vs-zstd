@@ -15,8 +15,6 @@ fi
 rm -r "data/cdnjs" || true
 
 datas=(
-  "otf:any"
-  "ttf:any"
   "svg:any"
   "css:min,not_min,any"
   "js:min,not_min,any"

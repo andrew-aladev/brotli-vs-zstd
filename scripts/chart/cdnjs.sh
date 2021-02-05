@@ -10,8 +10,6 @@ rm -r "chart/cdnjs" || true
 
 "./lib/chart/main.rb" \
   "cdnjs" \
-  "otf:any" \
-  "ttf:any" \
   "svg:any" \
   "css:min,not_min,any" \
   "js:min,not_min,any"
