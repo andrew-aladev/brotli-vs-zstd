@@ -7,7 +7,7 @@ require_relative "utils"
 
 class Processor
   # Test will be executed in single thread.
-  # We need to enable gvl, it will provides more accurate result.
+  # We need to enable gvl, it will provide more accurate result.
   # Ruby won't waste time on acquiring/releasing VM lock.
 
   DEFAULT_OPTIONS = {
