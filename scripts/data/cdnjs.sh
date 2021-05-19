@@ -12,7 +12,7 @@ if [ -z "$cdnjs_path" ]; then
   exit 1
 fi
 
-rm -r "data/cdnjs" || true
+rm -r "data/cdnjs" || :
 
 datas=(
   "svg:any"

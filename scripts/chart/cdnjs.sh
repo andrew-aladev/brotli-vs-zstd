@@ -6,7 +6,7 @@ cd "$DIR"
 
 cd "../.."
 
-rm -r "chart/cdnjs" || true
+rm -r "chart/cdnjs" || :
 
 "./lib/chart/main.rb" \
   "cdnjs" \

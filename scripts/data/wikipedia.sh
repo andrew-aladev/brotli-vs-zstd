@@ -12,6 +12,6 @@ if [ -z "$wikipedia_path" ]; then
   exit 1
 fi
 
-rm -r "data/wikipedia" || true
+rm -r "data/wikipedia" || :
 
 "./lib/file/main.rb" "wikipedia" "$wikipedia_path" "html:any"

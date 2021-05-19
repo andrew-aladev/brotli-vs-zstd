@@ -6,7 +6,7 @@ cd "$DIR"
 
 cd "../.."
 
-rm -r "chart/wikipedia" || true
+rm -r "chart/wikipedia" || :
 
 "./lib/chart/main.rb" \
   "wikipedia" \
