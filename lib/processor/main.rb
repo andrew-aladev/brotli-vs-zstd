@@ -13,7 +13,8 @@ def get_processor_stats(contents_provider, need_max_size: false)
     processor = Processor.new params[:type], params[:compression_level]
 
     begin
-      warn "processing contents, " \
+      warn \
+        "processing contents, " \
         "type: #{params[:type]}, " \
         "compression level: #{params[:compression_level]}"
 

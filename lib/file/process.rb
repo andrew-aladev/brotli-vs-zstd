@@ -38,7 +38,8 @@ def process_files(vendor, root_path, option_groups)
       from_size_text = format_filesize from_size
       to_size_text   = format_filesize to_size
 
-      warn "- processing group of files, " \
+      warn \
+        "- processing group of files, " \
         "extension: #{extension}, " \
         "type: #{type}, " \
         "from size: #{from_size_text}, " \
