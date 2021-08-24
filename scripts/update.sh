@@ -13,5 +13,6 @@ rm -f "Gemfile.lock"
 
 bash -cl "\
   gem install bundler && \
-  bundle update \
+  bundle update && \
+  bundle exec rubocop \
 "
