@@ -9,10 +9,14 @@ git fetch --tags || :
 git remote | xargs -I {} git rebase "{}/$(git branch --show-current)" || :
 
 cd ".."
+
+ROOT_DIR=$(pwd)
+
 rm -f "Gemfile.lock"
 
-bash -cl "\
-  gem install bundler && \
+/usr/bin/env bash -cl "\
+  cd \"$ROOT_DIR\" && \
+  gem install bundler --force && \
   bundle update && \
   bundle exec rubocop \
 "
