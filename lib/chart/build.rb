@@ -1,4 +1,6 @@
+require "brs"
 require "gruff"
+require "zstds"
 
 require_relative "../common/format"
 require_relative "data"
@@ -10,13 +12,18 @@ TYPE_TITLES = {
 }
 .freeze
 
-CHART_SIZE    = "600x1800".freeze
+CHART_VALUE_HEIGHT  = 20
+CHART_GROUP_SPACING = 10
+CHART_HEIGHT_OFFSET = 120
+CHART_WIDTH         = 600
+
 CHART_OPTIONS = {
   :font             => File.join(File.dirname(__FILE__), "..", "..", "font", "RobotoMono.ttf"),
-  :title_font_size  => 20.0,
-  :legend_font_size => 16.0,
-  :marker_font_size => 14.0,
-  :minimum_value    => 0.0
+  :title_font_size  => 20,
+  :legend_font_size => 16,
+  :marker_font_size => 14,
+  :group_spacing    => CHART_GROUP_SPACING,
+  :minimum_value    => 0
 }
 .freeze
 
@@ -64,7 +71,11 @@ def build_chart(vendor, extension, type, stats_data, declaration)
     "#{label} #{format_compression_level(compression_level)}"
   end
 
-  chart        = Gruff::SideBar.new CHART_SIZE
+  value_height = CHART_VALUE_HEIGHT * value_keys.length + CHART_GROUP_SPACING
+  height       = stats_data[:stats].length * value_height + CHART_HEIGHT_OFFSET
+  size         = "#{CHART_WIDTH}x#{height}"
+
+  chart        = Gruff::SideBar.new size
   chart.title  = title
   chart.labels = labels.each_with_object({})
     .with_index { |(label, result), index| result[index] = label }
