@@ -20,3 +20,5 @@ rm -f "Gemfile.lock"
   bundle update && \
   bundle exec rubocop \
 "
+
+./scripts/font/all.sh
