@@ -39,7 +39,7 @@ rm wikipedia-eu-html.tar.7z
 
 git clone git@github.com:cdnjs/cdnjs.git --depth=1
 rm -rf cdnjs/.git
-./scripts/cleanup_cdnjs.sh cdnjs
+./scripts/util/cleanup_cdnjs.sh cdnjs
 ```
 
 ## Benchmark

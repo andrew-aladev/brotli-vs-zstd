@@ -15,6 +15,7 @@ fi
 while read -r package; do
   name=$(basename "$package")
   echo "cleaning package: \"${name}\""
+
   ls --sort=version "$package" | \
     grep "^[[:digit:]]\+\." | \
     head -n -1 | \
