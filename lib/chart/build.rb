@@ -15,13 +15,13 @@ TYPE_TITLES = {
 CHART_VALUE_HEIGHT  = 10
 CHART_GROUP_SPACING = 5
 CHART_HEIGHT_OFFSET = 120
-CHART_WIDTH         = 600
+CHART_WIDTH         = 800
 
 CHART_OPTIONS = {
   :font             => File.join(File.dirname(__FILE__), "..", "..", "font", "RobotoMono.ttf"),
-  :title_font_size  => 20,
-  :legend_font_size => 16,
-  :marker_font_size => 14,
+  :title_font_size  => 14,
+  :legend_font_size => 13,
+  :marker_font_size => 12,
   :group_spacing    => CHART_GROUP_SPACING,
   :minimum_value    => 0
 }
@@ -51,8 +51,10 @@ def build_chart(vendor, extension, type, stats_data, declaration)
   to_size   = format_filesize to_size, 0 unless to_size.nil?
 
   title = "#{name.capitalize} for #{count} #{extension_title} files from #{vendor.tr('_', ' ')}"
-  title += ", size: #{from_size} - #{to_size}" unless from_size.nil? || to_size.nil?
+  title += ", #{from_size} - #{to_size}" unless from_size.nil? || to_size.nil?
   title += " (#{postfix})" unless postfix.nil?
+  title += "\n"
+  title += "brotli v#{BRS::LIBRARY_VERSION}, zstd v#{ZSTDS::LIBRARY_VERSION}"
 
   labels = stats.map do |stat|
     processor_type    = stat[:type]

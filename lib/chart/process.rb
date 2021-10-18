@@ -30,8 +30,8 @@ CHART_DECLARATIONS = [
   {
     :name       => "ratio limits",
     :value_keys => {
-      "min" => %i[single ratio min],
-      "max" => %i[single ratio max]
+      "max" => %i[single ratio max],
+      "min" => %i[single ratio min]
     }
   },
   {
@@ -39,8 +39,8 @@ CHART_DECLARATIONS = [
     :scale      => PERFORMANCE_SCALE,
     :postfix    => PERFORMANCE_POSTFIX,
     :value_keys => {
-      "min" => %i[single compress_performance min],
-      "max" => %i[single compress_performance max]
+      "max" => %i[single compress_performance max],
+      "min" => %i[single compress_performance min]
     }
   },
   {
@@ -48,8 +48,8 @@ CHART_DECLARATIONS = [
     :scale      => PERFORMANCE_SCALE,
     :postfix    => PERFORMANCE_POSTFIX,
     :value_keys => {
-      "min" => %i[single decompress_performance min],
-      "max" => %i[single decompress_performance max]
+      "max" => %i[single decompress_performance max],
+      "min" => %i[single decompress_performance min]
     }
   },
   {
