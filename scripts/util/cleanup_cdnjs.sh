@@ -19,5 +19,5 @@ while read -r package; do
   ls --sort=version "$package" | \
     grep "^[[:digit:]]\+\." | \
     head -n -1 | \
-    xargs -n 1 -I {} rm -r "${package}/{}"
+    xargs -I {} rm -r "${package}/{}"
 done < <(find "$CDNJS_PATH/ajax/libs" -mindepth 1 -maxdepth 1 -type "d")
