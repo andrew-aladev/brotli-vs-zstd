@@ -1,3 +1,6 @@
+require "brs"
+require "zstds"
+
 require_relative "data"
 require_relative "find"
 require_relative "group"
@@ -8,9 +11,9 @@ def process_files(vendor, root_path, option_groups)
   warn "-- processing files, vendor: #{vendor}, root path: #{root_path}"
 
   option_groups.each do |options|
-    extension = options[:extension]
-    type      = options[:type]
-    data      = []
+    extension   = options[:extension]
+    type        = options[:type]
+    stats_datas = []
 
     contents_provider = proc { find_file_contents root_path, extension, type }
 
@@ -22,7 +25,7 @@ def process_files(vendor, root_path, option_groups)
       next
     end
 
-    data << {
+    stats_datas << {
       :from_size => nil,
       :to_size   => nil,
       :count     => count,
@@ -51,13 +54,19 @@ def process_files(vendor, root_path, option_groups)
         next
       end
 
-      data << {
+      stats_datas << {
         :from_size => from_size,
         :to_size   => to_size,
         :count     => count,
         :stats     => stats
       }
     end
+
+    data = {
+      :brotli_version => BRS::LIBRARY_VERSION,
+      :zstds_version  => ZSTDS::LIBRARY_VERSION,
+      :stats_datas    => stats_datas
+    }
 
     save_files_data vendor, extension, type, data
   end

@@ -97,6 +97,10 @@ def process_charts(vendor, option_groups)
       next
     end
 
+    brotli_version = data[:brotli_version]
+    zstds_version  = data[:zstds_version]
+    stats_datas    = data[:stats_datas]
+
     percent = format_percent index, option_groups.length
     warn "- #{percent}% processing charts, vendor: #{vendor}, extension: #{extension}, type: #{type}"
 
@@ -106,8 +110,8 @@ def process_charts(vendor, option_groups)
       declaration_percent = format_percent declaration_index, CHART_DECLARATIONS.length
       warn "#{declaration_percent}% processing chart, name: #{name}"
 
-      data.each do |stats_data|
-        build_chart vendor, extension, type, stats_data, declaration
+      stats_datas.each do |stats_data|
+        build_chart vendor, extension, type, brotli_version, zstds_version, stats_data, declaration
       end
     end
   end

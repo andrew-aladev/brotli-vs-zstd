@@ -1,6 +1,4 @@
-require "brs"
 require "gruff"
-require "zstds"
 
 require_relative "../common/format"
 require_relative "data"
@@ -27,7 +25,7 @@ CHART_OPTIONS = {
 }
 .freeze
 
-def build_chart(vendor, extension, type, stats_data, declaration)
+def build_chart(vendor, extension, type, brotli_version, zstds_version, stats_data, declaration)
   from_size  = stats_data[:from_size]
   to_size    = stats_data[:to_size]
   count      = stats_data[:count]
@@ -54,7 +52,7 @@ def build_chart(vendor, extension, type, stats_data, declaration)
   title += ", #{from_size} - #{to_size}" unless from_size.nil? || to_size.nil?
   title += " (#{postfix})" unless postfix.nil?
   title += "\n"
-  title += "brotli v#{BRS::LIBRARY_VERSION}, zstd v#{ZSTDS::LIBRARY_VERSION}"
+  title += "brotli v#{brotli_version}, zstd v#{zstds_version}"
 
   labels = stats.map do |stat|
     processor_type    = stat[:type]
