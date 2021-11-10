@@ -12,6 +12,6 @@ if [ -z "$cdnjs_path" ]; then
   exit 1
 fi
 
-rm -r "data/cdnjs" || :
+rm -r "data/cdnjs/css/min"* || :
 
-"./lib/file/main.rb" "cdnjs" "$cdnjs_path" "css:not_min"
+"./lib/file/main.rb" "cdnjs" "$cdnjs_path" "css:min"
