@@ -33,7 +33,7 @@ def find_file_contents(root_path, extension, type)
     .select { |path| File.file?(path) && regexp.match?(path) }
 
   file_contents = file_pathes.map do |path|
-    content   = File.open path, "rb", &:read
+    content   = File.binread path
     size_text = format_filesize content.bytesize
 
     warn "reading path: #{path}, size: #{size_text}"
